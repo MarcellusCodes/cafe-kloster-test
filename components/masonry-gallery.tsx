@@ -36,14 +36,14 @@ const MasonryGallery = ({ props }: { props: TMasonryGallery }) => {
                   height: Math.floor(Math.random() * (500 - 200 + 1)) + 200,
                 }}
                 key={image.id}
-                className="group relative inline-block w-full rounded-sm border-2 border-transparent hover:border-tertiary-300"
+                className="group relative inline-block w-full overflow-hidden rounded-sm border-2 border-transparent hover:border-tertiary-300"
               >
                 <div className="absolute top-0 left-0 z-10 h-full w-full bg-primary-900/60 opacity-0 duration-300 group-hover:opacity-100"></div>
                 <Image
                   alt={image.alt}
                   src={image.src}
                   fill={true}
-                  className="rounded-sm object-cover"
+                  className="rounded-sm object-cover duration-300 group-hover:scale-110 "
                 />
                 <figcaption className="absolute top-1/2 left-1/2 z-20 -translate-x-1/2 -translate-y-0 font-heading text-xl text-secondary-50 opacity-0 transition-all duration-300 group-hover:-translate-y-1/2 group-hover:opacity-100">
                   {image.caption}

@@ -5,6 +5,7 @@ import {
   MasonryGallery,
   CallToAction,
   ContentOne,
+  ContentTwo,
 } from "@/components/index";
 
 const headerProps = {
@@ -235,6 +236,7 @@ export default function Home() {
       <MasonryGallery props={MasonryGalleryProps} />
       <CallToAction />
       <ContentOne props={ContentOneProps} />
+      <ContentTwo />
       <Footer />
     </>
   );
