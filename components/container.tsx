@@ -3,12 +3,8 @@ type TContainer = {
   children: React.ReactNode;
 };
 
-const Container = ({ children, className, ref }: TContainer) => {
-  return (
-    <div ref={ref} className={`container mx-auto ${className}`}>
-      {children}
-    </div>
-  );
+const Container = ({ children, className }: TContainer) => {
+  return <div className={`container mx-auto ${className}`}>{children}</div>;
 };
 
 export default Container;
