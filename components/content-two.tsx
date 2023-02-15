@@ -6,23 +6,23 @@ const ContentTwo = () => {
   const arr = [1, 2, 3, 4, 5];
   return (
     <Section className="h-full bg-primary-900">
-      <Container className="flex h-full flex-col ">
+      <Container className="flex h-full flex-col gap-12">
         <div className="mb-12 flex flex-col items-start gap-6">
           <h2 className="font-text text-xl font-semibold text-tertiary-300">
             Unsere Arbeit
           </h2>
-          <p className="mb-6 w-full font-heading text-4xl font-bold text-white sm:text-6xl">
+          <p className=" w-full font-heading text-4xl font-bold text-white sm:text-6xl">
             Geschichten ausem Paulaner Garten
           </p>
         </div>
         {arr.map((item, index) => (
           <div
             key={item}
-            className={`flex flex-col-reverse items-center gap-12  ${
+            className={` flex flex-col-reverse items-center lg:mb-0 lg:gap-12  ${
               index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"
             }`}
           >
-            <div className="grid h-[400px] w-full place-items-center rounded-sm border-2 border-gray-300 border-opacity-10 bg-primary-900 bg-opacity-80  bg-[url('/content-2-pattern.svg')] bg-no-repeat md:h-[700px] lg:w-1/2">
+            <div className="grid h-[400px] lg:mt-0 mt-6 w-full place-items-center rounded-sm border-2 border-gray-300 border-opacity-10 bg-primary-900 bg-opacity-80  bg-[url('/content-2-pattern.svg')] bg-no-repeat md:h-[700px] lg:w-1/2">
               <div className="relative h-[80%] w-[80%]">
                 <Image
                   alt="test"
