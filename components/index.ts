@@ -10,3 +10,4 @@ export { default as CallToAction } from "./call-to-action";
 export { default as ContentOne } from "./content-one";
 export { default as ContentTwo } from "./content-two";
 export { default as ContentThree } from "./content-three";
+export { default as Faq } from "./faq";

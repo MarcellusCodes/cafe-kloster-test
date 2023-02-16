@@ -7,6 +7,7 @@ import {
   ContentOne,
   ContentTwo,
   ContentThree,
+  Faq,
 } from "@/components/index";
 
 const headerProps = {
@@ -258,6 +259,65 @@ const ContentTwoProps = {
   ],
 };
 
+const ContentThreeProps = {
+  title: "Wir legen Wert auf Qualität",
+  caption: "Unser Versprechen",
+  text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt, voluptatum? Ut veniam eligendi quia. Officiis corrupti nihil accusantium, quae, ex nesciunt quam quos omnis quisquam sint optio distinctio nam excepturi sed commodi, totam cum error iste explicabo odio sit voluptatibus. Obcaecati, minima? Voluptate laudantium mollitia sed repudiandae nobis ab placeat provident voluptas perferendis eum et porro fuga modi minima fugiat delectus reprehenderit rerum, amet totam quia hic eos. Quod vitae, sapiente iste illum saepe minus voluptatibus quaerat placeat porro dolor asperiores aliquam laudantium, nostrum nisi? Velit aliquid hic quis voluptatem explicabo voluptates eligendi omnis ab aspernatur blanditiis, praesentium ut alias.",
+  list: [
+    {
+      id: "1",
+      text: "lorem orem ipsum dolor sit amet consectetur adipisicing elit.",
+    },
+    {
+      id: "2",
+      text: "lorem orem ipsum dolor sit amet consectetur adipisicing elit.",
+    },
+    {
+      id: "3",
+      text: "lorem orem ipsum dolor sit amet consectetur adipisicing elit.",
+    },
+  ],
+  cta_title: "Speisekarte",
+  cta_link: "/",
+  images: [
+    {
+      id: "1",
+      src: "/content_one-1.jpg",
+      alt: "test",
+    },
+    {
+      id: "2",
+      src: "/content_one-2.jpg",
+      alt: "test",
+    },
+    {
+      id: "3",
+      src: "/content_one-3.jpg",
+      alt: "test",
+    },
+    {
+      id: "4",
+      src: "/content_one-4.jpg",
+      alt: "test",
+    },
+    {
+      id: "5",
+      src: "/content_one-5.jpg",
+      alt: "test",
+    },
+  ],
+};
+
+const faqProps = {
+  title: "Häufig gestellte Fragen",
+  caption: "FAQ",
+  faqs: [
+    { id: "string", question: "string", answer: "string" },
+    { id: "string", question: "string", answer: "string" },
+    { id: "string", question: "string", answer: "string" },
+  ],
+};
+
 export default function Home() {
   return (
     <>
@@ -267,7 +327,8 @@ export default function Home() {
       <CallToAction />
       <ContentOne props={ContentOneProps} />
       <ContentTwo props={ContentTwoProps} />
-      <ContentThree />
+      <ContentThree props={ContentThreeProps} />
+      <Faq props={faqProps} />
       <Footer />
     </>
   );
