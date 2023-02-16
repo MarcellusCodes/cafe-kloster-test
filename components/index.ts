@@ -11,3 +11,5 @@ export { default as ContentOne } from "./content-one";
 export { default as ContentTwo } from "./content-two";
 export { default as ContentThree } from "./content-three";
 export { default as Faq } from "./faq";
+export { default as Modal } from "./modal";
+export { default as Alert } from "./alert";

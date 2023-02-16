@@ -1,4 +1,4 @@
-import Modal from "@/components/shared/modal";
+import Modal from "@/components/modal";
 import {
   useState,
   Dispatch,
@@ -48,7 +48,6 @@ const SignInModal = ({
             } flex h-10 w-full items-center justify-center space-x-3 rounded-md border text-sm shadow-sm transition-all duration-75 focus:outline-none`}
             onClick={() => {
               setSignInClicked(true);
-              
             }}
           >
             {signInClicked ? (

@@ -8,7 +8,10 @@ import {
   ContentTwo,
   ContentThree,
   Faq,
+  Alert,
 } from "@/components/index";
+import { useSignInModal } from "../components/layout/sign-in-modal";
+import { useState } from "react";
 
 const headerProps = {
   id: "1",
@@ -311,6 +314,10 @@ const ContentThreeProps = {
 const faqProps = {
   title: "Häufig gestellte Fragen",
   caption: "FAQ",
+  image: {
+    alt: "alt",
+    src: "/faq.jpg",
+  },
   faqs: [
     { id: "string", question: "string", answer: "string" },
     { id: "string", question: "string", answer: "string" },
@@ -319,17 +326,21 @@ const faqProps = {
 };
 
 export default function Home() {
+  const { SignInModal, setShowSignInModal } = useSignInModal();
   return (
     <>
-      <Header props={headerProps} />
-      <CtaGallery props={CtaGalleryProps} />
-      <MasonryGallery props={MasonryGalleryProps} />
-      <CallToAction />
-      <ContentOne props={ContentOneProps} />
-      <ContentTwo props={ContentTwoProps} />
-      <ContentThree props={ContentThreeProps} />
-      <Faq props={faqProps} />
-      <Footer />
+      <div className="relative">
+        <Alert />
+        <Header props={headerProps} />
+        <CtaGallery props={CtaGalleryProps} />
+        <MasonryGallery props={MasonryGalleryProps} />
+        <CallToAction />
+        <ContentOne props={ContentOneProps} />
+        <ContentTwo props={ContentTwoProps} />
+        <ContentThree props={ContentThreeProps} />
+        <Faq props={faqProps} />
+        <Footer />
+      </div>
     </>
   );
 }

@@ -67,7 +67,8 @@ type TFaq = {
   id: "string";
   title: string;
   caption: string;
-  faqs: { id: "test"; question: string; answer: string }[];
+  image: { src: string; alt: string };
+  faqs: { id: string; question: string; answer: string }[];
 };
 
 const Faq = ({ props }: { props: TFaq }) => {
@@ -99,8 +100,8 @@ const Faq = ({ props }: { props: TFaq }) => {
         <motion.div className="hidden h-full lg:block lg:w-1/2">
           <motion.div className="absolute right-0 top-0 h-full w-1/2">
             <Image
-              alt="test"
-              src="/faq.jpg"
+              alt={props.image.alt}
+              src={props.image.src}
               fill={true}
               className="rounded-sm object-cover"
             />
