@@ -1,23 +1,33 @@
-import React from "react";
 import { Section, Container } from "@/components/index";
 import Image from "next/image";
 
-const ContentTwo = () => {
-  const arr = [1, 2, 3, 4, 5];
+type TContentTwo = {
+  title: string;
+  caption: string;
+  boxes: {
+    id: string;
+    alt: string;
+    src: string;
+    title: string;
+    text: string;
+  }[];
+};
+
+const ContentTwo = ({ props }: { props: TContentTwo }) => {
   return (
     <Section className="h-full bg-primary-900">
       <Container className="flex h-full flex-col gap-12 lg:gap-0">
         <div className="mb-12 flex flex-col items-start gap-6">
           <h2 className="font-text text-xl font-semibold text-tertiary-300">
-            Unsere Arbeit
+            {props.title}
           </h2>
           <p className=" w-full font-heading text-4xl font-bold text-white sm:text-6xl">
-            Geschichten ausem Paulaner Garten
+            {props.caption}
           </p>
         </div>
-        {arr.map((item, index) => (
+        {props.boxes.map((box, index) => (
           <div
-            key={item}
+            key={box.id}
             className={` flex flex-col-reverse items-center lg:mb-0 lg:gap-12  ${
               index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"
             }`}
@@ -25,8 +35,8 @@ const ContentTwo = () => {
             <div className="mt-6 grid h-[400px] w-full place-items-center rounded-sm border-2 border-gray-300 border-opacity-10 bg-primary-900 bg-opacity-80 bg-[url('/content-2-pattern.svg')]  bg-no-repeat md:h-[700px] lg:mt-0 lg:w-1/2">
               <div className="relative h-[80%] w-[80%]">
                 <Image
-                  alt="test"
-                  src="/content_one-1.jpg"
+                  alt={box.alt}
+                  src={box.src}
                   fill={true}
                   className="rounded-xs object-cover"
                 />
@@ -50,16 +60,11 @@ const ContentTwo = () => {
                 <path d="M59.6 2.2c-2.2 3.2-2 8.9.6 14.3 2 4 2.1 4.9.9 8.1-1 2.6-1 3.9-.2 4.7 1.8 1.8 4.3-1.5 4.8-6.6.4-3.6.1-5.3-1.7-8.2-2.1-3.5-2.2-4.1-.8-11.9.5-2.8-1.8-3.1-3.6-.4zM46.6 15.2c-2.2 3.1-2 9.7.4 13.3 2.3 3.4 2.5 6.3.8 10-.9 2-.9 2.8.1 3.8 1 .9 1.6.7 3.2-1.2 2.6-3.1 2.5-10-.1-14.3-2.1-3.5-2.6-8.3-1-9.3 1.5-.9 1.2-4.5-.4-4.5-.8 0-2.2 1-3 2.2zM71.4 16.5c-1.7 4.2-1.2 8 1.8 13.2 1.9 3.1 1.9 3.8.8 7.3-2 6 1.3 8.1 3.9 2.4 1.7-3.7 1.3-7.5-1-11.8-1.4-2.6-1.9-5-1.6-7 .3-1.7.7-4 .9-5.1.2-1.2-.3-2.1-1.5-2.3-1.2-.2-2.2.7-3.3 3.3zM38.8 48c-10.2 1.3-17.3 3.1-21.5 5.4l-3.8 2.2.1 8c.2 8.9 2.2 15.4 7.8 24.7 3.8 6.2 3.9 5.9-3.8 7.2-6.7 1.1-14.6 4.6-16.2 7-2.4 3.7-1 7.8 4.2 12.4 20.9 18.4 96.4 16.7 111-2.4 4.3-5.7 3-10.2-3.9-13.7l-2.8-1.4L115 95c12.6-5.9 16.4-17.5 9.4-28.3-2.6-3.9-10.7-8.7-15-8.7-1.1 0-2.9-1-4-2.1-4.7-5.3-17.2-7.9-41.4-8.4-10.2-.2-21.5 0-25.2.5zm49.1 5.5c8.4 1.6 14.1 3.8 14.1 5.4 0 .4-1 1.2-2.2 1.8-1.7.7-2.9.6-4.5-.4-4-2.6-18.2-4.4-35.4-4.4-17.6 0-27.9 1.2-33.8 3.8-4.1 1.8-6 1.8-8-.3-1.3-1.2-1-1.6 2.2-2.9 12.8-5.3 47.2-6.8 67.6-3zm-6.6 7.6c4 .6 7.6 1.5 8.1 1.9 1.5 1.5-10.5 2.5-28.9 2.5-19 0-32.3-1.1-30.9-2.5 2.6-2.6 38.4-3.9 51.7-1.9zm35.4 4c3.7 2.3 7.2 8.5 7.3 12.9 0 3.6-3.3 8.5-7.7 11.4-4.3 2.8-14 6.2-20.4 7.2l-4.4.7 2.3-2.6c1.3-1.4 4.5-3 7-3.7 7.4-1.8 14.1-5.1 16.2-7.8 4.7-5.9 1.2-13.9-7.1-16.4-2.8-.8-3.9-1.7-3.9-3.1 0-1.7.5-1.9 3.5-1.4 2 .3 5.2 1.6 7.2 2.8zM101 70.4c-1.7 8.4-6.7 17.4-13.1 23.9-16.3 16.3-40.5 16.3-56.5-.1-6.2-6.3-12-17.3-13.1-24.7-.6-4.5-.5-4.8 1.3-4.1 10.6 4.2 47.5 6 65.2 3.2 5.6-.9 11.6-2.2 13.4-2.9 1.8-.8 3.5-1.3 3.6-1.1.2.1-.1 2.7-.8 5.8zm13.2 3.9c2.6 4.1-.2 7.7-8.1 10.8-7 2.6-7.4 2.5-5.3-1.9 1.1-2 2.5-5.5 3.2-7.7.7-2.2 1.5-4.3 1.7-4.7.5-1 7.5 1.9 8.5 3.5zm-81.3 26.9 4.2 3.3-2.8.9c-3.8 1.2-6.3 3.5-6.3 5.9 0 1.7-.5 1.9-4.7 1.2-6.8-1-16.9-4.3-18.3-5.9-.9-1.2-.4-1.8 2.8-3.5 3.4-1.8 15.1-4.8 19.3-5 .8-.1 3.4 1.4 5.8 3.1zm77.8 1.4c2 1.1 3.8 2.4 4 3 .5 1.5-5.9 4.3-13.9 5.9-8 1.7-10.1 1.9-9.4.6 1.2-1.8-.8-4.4-4.8-6.2-4.6-2-4.4-2.2 5.9-4.3 8.3-1.7 13.1-1.5 18.2 1zm-57.5 7.5c5.9 1.1 7.9 1.1 16-.5 8.2-1.5 9.9-1.6 13.8-.4 4.2 1.3 4.4 1.5 2.4 2.6-4.2 2.2-16.7 3.4-30.4 2.9-18.5-.7-26.8-3.2-18.7-5.6 3.6-1.1 7.1-.9 16.9 1zM25 117.2c15.5 2.7 65.5 1.5 78.5-1.8 1.4-.3 1.3-.1-.6 1-4.4 2.5-18 5.5-30.8 6.7-19 1.8-43.2-1-55.1-6.5-1.9-.9-2.6-1.4-1.5-1.1 1.1.2 5.4 1 9.5 1.7z" />
                 <path d="M24.2 74.7c.4 2.1 3.3 2.5 3.3.3 0-.8-.8-1.6-1.8-1.8-1.4-.3-1.8.1-1.5 1.5zM27 82.1C27 84.5 38.1 96 40.4 96c3.5 0 2.3-2.4-4.4-9-3.9-3.8-7.5-7-8-7-.6 0-1 .9-1 2.1z" />
               </svg>
-              <h3 className="font-heading text-4xl font-bold text-white sm:text-6xl">
-                We are one!
+              <h3 className="font-heading text-3xl font-bold text-white sm:text-5xl">
+                {box.title}
               </h3>
               <p className="z-10 max-w-xl  font-text text-xl text-white text-opacity-80">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Perferendis quibusdam consequatur aut ullam qui iste magni eaque
-                et. Neque labore dolore adipisci dolorem temporibus soluta. Quas
-                incidunt deleniti voluptatum illum similique nemo ipsum eum
-                accusantium, maxime a explicabo quis autem sequi ut eos eveniet,
-                possimus recusandae, veniam alias. Dolorum, alias.
+                {box.text}
               </p>
             </div>
           </div>

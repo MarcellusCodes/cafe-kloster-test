@@ -50,7 +50,7 @@ const Slide = ({ isActive, props }: { isActive: boolean; props: TSlider }) => {
         <p className="font-text text-xl  text-secondary-900/80">{props.text}</p>
         <motion.button
           onClick={handleShowMore}
-          className=" font-heading text-lg text-tertiary-300 hover:bg-tertiary-100"
+          className=" font-heading text-lg text-tertiary-300 hover:bg-tertiary-100 "
         >
           Mehr Erfahren
         </motion.button>
@@ -105,10 +105,10 @@ const CtaGallery = ({ props }: { props: TCtaGallery }) => {
             <path d="M68.9 67.3c-7.2 4.8-11.1 14.3-8.8 21.2 2.8 8.1 10.3 8.1 17.8 0 6.2-6.7 7.8-16.8 3.5-21.6-2.4-2.6-8.3-2.5-12.5.4zm5.3 4c-3.5 3.6-3.9 5.2-1.7 8.1.8 1.1 1.5 2.9 1.5 4.1 0 2.5-6.5 9.2-7.4 7.7-.3-.6.7-2 2.4-3.2 3.4-2.4 3.7-4.7 1.4-9.1-1.8-3.6-1.2-6.2 2.3-8.9 4-3.2 5-2.3 1.5 1.3zM50.5 76c3.8 3.9 3.9 4.1 2.6 7.3-2.4 6-2.4 6.4 1.2 10.4 2 2.1 3.9 3.4 4.3 3 .5-.4-.6-2.1-2.4-3.8-3.6-3.3-3.8-4.3-1.7-7.9 2.2-3.9 1.8-6-2.1-9.6-5-4.8-6.6-4.2-1.9.6zM6 61c3.9 2.1 5 2.4 5 1.2 0-1.1-4.6-3.2-6.8-3.2-1 .1-.3.9 1.8 2zM119.5 61.7c-3.9 2.1-1.6 2.9 2.4.8 1.7-.8 3.1-1.8 3.1-2 0-1-2.6-.4-5.5 1.2zM6.2 82.8c-1.8 1-3 2.1-2.6 2.5.8.8 6.4-2 6.4-3.3 0-1.2.2-1.3-3.8.8zM117 82.8c0 .5 1.6 1.6 3.5 2.5 4.2 2 4.7.4.5-1.8-3.3-1.7-4-1.8-4-.7z" />
           </svg>
 
-          <h2 className="font-text text-xl font-semibold text-tertiary-300 mb-6">
+          <h2 className="mb-6 font-text text-xl font-semibold text-tertiary-300">
             {props.title}
           </h2>
-          <h3 className="max-w-2xl font-title text-4xl text-primary-900 sm:text-6xl xl:text-8xl mb-12">
+          <h3 className="mb-12 max-w-2xl font-title text-4xl text-primary-900 sm:text-6xl xl:text-8xl">
             <Balancer>{props.caption}</Balancer>
           </h3>
           <PrimaryLink title={props.cta_title} href={props.cta_link} />
@@ -150,7 +150,7 @@ const CtaGallery = ({ props }: { props: TCtaGallery }) => {
           </div>
           <div className="absolute left-0 -bottom-20 flex flex-row items-center gap-8 lg:-left-16 lg:-bottom-4 xl:bottom-20">
             <button
-              className="group relative grid h-10 w-10  place-items-center rounded-full bg-tertiary-300 duration-300 hover:scale-110 hover:bg-tertiary-400"
+              className="group relative grid h-10 w-10  place-items-center rounded-full bg-tertiary-300 duration-300 hover:scale-110 hover:bg-tertiary-400 active:scale-110 active:bg-tertiary-400"
               onClick={() => {
                 swiperInstance.slidePrev();
               }}
@@ -158,13 +158,13 @@ const CtaGallery = ({ props }: { props: TCtaGallery }) => {
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
-                className="absolute top-1/2 left-1/2 h-10 w-10 -translate-x-[.5rem] -translate-y-1/2 fill-current  text-primary-900 duration-300 group-hover:-translate-x-1/2"
+                className="absolute top-1/2 left-1/2 h-10 w-10 -translate-x-[.5rem] -translate-y-1/2 fill-current  text-primary-900 duration-300 group-hover:-translate-x-1/2 group-active:-translate-x-1/2"
               >
                 <path d="M19 11H9l3.29-3.29a1 1 0 0 0 0-1.42 1 1 0 0 0-1.41 0l-4.29 4.3A2 2 0 0 0 6 12a2 2 0 0 0 .59 1.4l4.29 4.3a1 1 0 1 0 1.41-1.42L9 13h10a1 1 0 0 0 0-2Z" />
               </svg>
             </button>
             <button
-              className="group relative grid h-10 w-10  place-items-center rounded-full bg-tertiary-300 duration-300 hover:scale-110 hover:bg-tertiary-400"
+              className="group relative grid h-10 w-10  place-items-center rounded-full bg-tertiary-300 duration-300 hover:scale-110 hover:bg-tertiary-400 active:scale-110 active:bg-tertiary-400"
               onClick={() => {
                 swiperInstance.slideNext();
               }}
@@ -172,7 +172,7 @@ const CtaGallery = ({ props }: { props: TCtaGallery }) => {
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
-                className="absolute top-1/2 left-1/2 h-10 w-10 -translate-x-[2rem] -translate-y-1/2 fill-current  text-primary-900 duration-300 group-hover:-translate-x-1/2"
+                className="absolute top-1/2 left-1/2 h-10 w-10 -translate-x-[2rem] -translate-y-1/2 fill-current  text-primary-900 duration-300 group-hover:-translate-x-1/2 group-active:-translate-x-1/2"
               >
                 <path d="M18 12a2 2 0 0 0-.59-1.4l-4.29-4.3a1 1 0 0 0-1.41 0 1 1 0 0 0 0 1.42L15 11H5a1 1 0 0 0 0 2h10l-3.29 3.29a1 1 0 0 0 1.41 1.42l4.29-4.3A2 2 0 0 0 18 12Z" />
               </svg>

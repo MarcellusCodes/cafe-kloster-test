@@ -6,6 +6,7 @@ import {
   CallToAction,
   ContentOne,
   ContentTwo,
+  ContentThree,
 } from "@/components/index";
 
 const headerProps = {
@@ -228,6 +229,35 @@ const ContentOneProps = {
     "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem dolorem soluta, architecto, perferendis labore doloribus sit corrupti tempora tempore hic aperiam asperiores cum accusantium cumque!",
 };
 
+const ContentTwoProps = {
+  id: "test",
+  title: "Sehr neugierig",
+  caption: "Geschichten aus dem Paulaner Garten",
+  boxes: [
+    {
+      id: "1",
+      src: "/content_one-1.jpg",
+      alt: "Header Image",
+      title: "Hello World!",
+      text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, consequuntur temporibus molestiae qui harum quaerat cupiditate, culpa maiores omnis pariatur placeat repudiandae quam veritatis dolorum eveniet? Repellendus quo, quisquam qui minus in id atque officiis voluptatum doloremque dolore, molestiae, quasi odio a amet quibusdam aliquid rem consequatur quidem expedita delectus.",
+    },
+    {
+      id: "2",
+      src: "/content_one-2.jpg",
+      alt: "Header Image",
+      title: "Hello Another World!",
+      text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, consequuntur temporibus molestiae qui harum quaerat cupiditate, culpa maiores omnis pariatur placeat repudiandae quam veritatis dolorum eveniet? Repellendus quo, quisquam qui minus in id atque officiis voluptatum doloremque dolore, molestiae, quasi odio a amet quibusdam aliquid rem consequatur quidem expedita delectus.",
+    },
+    {
+      id: "3",
+      src: "/content_one-3.jpg",
+      alt: "Header Image",
+      title: "Wow another Super Hello World!",
+      text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, consequuntur temporibus molestiae qui harum quaerat cupiditate, culpa maiores omnis pariatur placeat repudiandae quam veritatis dolorum eveniet? Repellendus quo, quisquam qui minus in id atque officiis voluptatum doloremque dolore, molestiae, quasi odio a amet quibusdam aliquid rem consequatur quidem expedita delectus.",
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <>
@@ -236,7 +266,8 @@ export default function Home() {
       <MasonryGallery props={MasonryGalleryProps} />
       <CallToAction />
       <ContentOne props={ContentOneProps} />
-      <ContentTwo />
+      <ContentTwo props={ContentTwoProps} />
+      <ContentThree />
       <Footer />
     </>
   );
