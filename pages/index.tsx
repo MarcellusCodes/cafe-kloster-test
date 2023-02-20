@@ -9,9 +9,17 @@ import {
   ContentThree,
   Faq,
   Alert,
+  MarqueeText,
+  MarqueeReview,
+  LoadingScreen,
+  CallToActionImage,
+  LeafletMap,
+  CookieBanner,
 } from "@/components/index";
 import { useSignInModal } from "../components/layout/sign-in-modal";
-import { useState } from "react";
+import { useState, Suspense } from "react";
+import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
 
 const headerProps = {
   id: "1",
@@ -190,6 +198,14 @@ const MasonryGalleryProps = {
   ],
 };
 
+const CallToActionProps = {
+  id: "test",
+  title: "Hol dir deine Kaffeebox",
+  caption: "Jetzt bestellen",
+  cta_title: "Abonnieren",
+  cta_link: "/",
+};
+
 const ContentOneProps = {
   id: "test",
   title: "Erfahre mehr!",
@@ -312,6 +328,7 @@ const ContentThreeProps = {
 };
 
 const faqProps = {
+  id: "test",
   title: "Häufig gestellte Fragen",
   caption: "FAQ",
   image: {
@@ -325,22 +342,108 @@ const faqProps = {
   ],
 };
 
+const alertProps = {
+  id: "test",
+  text: "Wichtig: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit, pariatur!",
+};
+
+const marqueeTextProps = {
+  id: "test",
+  text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam, itaque.",
+  theme: "light",
+};
+
+const marqueeReviewProps = {
+  id: "test",
+  title: "Was unsere Kunden sagen",
+  caption: "Reviews",
+  text: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+  cta_title: "Mehr Bewertungen",
+  cta_link: "/",
+  reviews: [
+    {
+      id: "test",
+      name: "Joshua",
+      image: {
+        src: "/content_one-1.jpg",
+        alt: "test",
+      },
+      text: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+      rating: 4,
+    },
+    {
+      id: "test",
+      name: "Joshua",
+      image: {
+        src: "/content_one-5.jpg",
+        alt: "test",
+      },
+      text: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+      rating: 4,
+    },
+    {
+      id: "test",
+      name: "Tester",
+      image: {
+        src: "/content_one-2.jpg",
+        alt: "test",
+      },
+      text: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+      rating: 5,
+    },
+    {
+      id: "test",
+      name: "Joshua",
+      image: {
+        src: "/content_one-3.jpg",
+        alt: "test",
+      },
+      text: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+      rating: 4,
+    },
+    {
+      id: "test",
+      name: "Joshua",
+      image: {
+        src: "/content_one-4.jpg",
+        alt: "test",
+      },
+      text: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+      rating: 2,
+    },
+  ],
+};
+
+const CallToActionImageProps = {
+  id: "test",
+  title: "Guten Appetit",
+  caption: "Leckereien aus dem Kloster",
+  cta_title: "Jetzt Essen",
+  cta_link: "/",
+  image: { src: "/cta-bg-2.jpg", alt: "test" },
+};
+
 export default function Home() {
   const { SignInModal, setShowSignInModal } = useSignInModal();
   return (
     <>
-      <div className="relative">
-        <Alert />
+      <motion.div className="relative">
+        <CookieBanner />
+        <Alert props={alertProps} />
         <Header props={headerProps} />
         <CtaGallery props={CtaGalleryProps} />
+        <MarqueeText props={marqueeTextProps} />
         <MasonryGallery props={MasonryGalleryProps} />
-        <CallToAction />
+        <CallToAction props={CallToActionProps} />
         <ContentOne props={ContentOneProps} />
-        <ContentTwo props={ContentTwoProps} />
+        {/* <ContentTwo props={ContentTwoProps} /> */}
+        <MarqueeReview props={marqueeReviewProps} />
         <ContentThree props={ContentThreeProps} />
         <Faq props={faqProps} />
+        <CallToActionImage props={CallToActionImageProps} />
+        <LeafletMap />
         <Footer />
-      </div>
+      </motion.div>
     </>
   );
 }

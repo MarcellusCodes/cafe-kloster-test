@@ -63,7 +63,7 @@ const Footer = () => {
   return (
     <motion.footer
       layout
-      className="sticky bottom-0 left-0 z-30 inline-block w-full overflow-hidden rounded-sm bg-tertiary-400 px-4"
+      className="fixed bottom-0 left-0 z-30 inline-block w-full overflow-hidden rounded-sm bg-tertiary-400 px-4"
     >
       <ul
         onMouseLeave={() => setFocused(null)}

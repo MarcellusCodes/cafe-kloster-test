@@ -1,7 +1,15 @@
 import React from "react";
 import { Section, Container, PrimaryLink } from "@/components/index";
 
-const CallToAction = () => {
+type TCallToAction = {
+  id: string;
+  title: string;
+  caption: string;
+  cta_title: string;
+  cta_link: string;
+};
+
+const CallToAction = ({ props }: { props: TCallToAction }) => {
   return (
     <Section className="w-full bg-primary-900">
       <Container className="relative flex flex-col items-center justify-center gap-6">
@@ -14,12 +22,12 @@ const CallToAction = () => {
           <path d="M64 11.1c-.7 1.1-.9 2.8-.5 3.7.5 1.5.9 1.3 2.5-.8 1.1-1.4 2-3.1 2-3.8 0-2-2.8-1.4-4 .9zM62.5 18c-.7 1.2.2 3 1.6 3 .5 0 .9-.9.9-2 0-2.1-1.5-2.7-2.5-1zM39.2 16.2c-1.7 1.7-1.5 5.1.5 9.3 2.1 4.5 5.6 5.6 8.5 2.7 2.3-2.3 2-4.8-1.2-10-2.1-3.4-5.5-4.3-7.8-2zm6.1 5.4C47 25 46.8 27 45 27c-1.2 0-4-5.3-4-7.5 0-2.8 2.6-1.6 4.3 2.1zM39 36.7c-4.2 1.6-3.9 6.3.5 10.2 4.1 3.6 6.5 3.9 9 1.1 2.5-2.7 1.3-6.2-3.3-9.4-2.1-1.4-4-2.6-4.3-2.5-.2 0-1.1.3-1.9.6zm5.7 5.7c2.1 1.9 2.5 2.7 1.6 3.7-.9.9-1.8.6-4.2-1-3.2-2.3-4.1-5.1-1.7-5.1.8 0 2.8 1.1 4.3 2.4zM93.3 37c-1.8.4-4 1.3-4.8 2-1.9 1.6-1.9 5.4 0 7 1.8 1.5 9.8.8 12-1 2-1.7 1.9-5.3-.3-7.3-2-1.8-2.2-1.9-6.9-.7zm5.7 4.4c0 1.4-2.9 2.6-6.7 2.6-2.4 0-3.2-2.5-1-3.3 2.7-1.2 7.7-.7 7.7.7zM64.6 41.4c-4 3.8-4.4 5.5-1.8 7.9 2.5 2.3 4.1 2.1 8.4-.8 4.5-3.1 5.6-6 3.2-8.6-2.5-2.8-5.8-2.3-9.8 1.5zm7.2 1.2c-.5 2.6-5.6 6-6.9 4.7-.8-.8-.3-1.8 1.8-3.7 3.2-2.9 5.6-3.4 5.1-1zM23.9 55.3c-1.9 1.2-3.5 3.2-3.7 4.4-.4 2.6 2.3 5.3 5.2 5.3 3.3 0 9-4.2 9.4-6.8.8-5.3-5-6.9-10.9-2.9zm8.1 2.2c0 1.8-5.6 4.9-7.6 4.1-2.2-.8-1.7-2.4 1.4-4 3.5-2 6.2-2 6.2-.1z" />
         </svg>
         <h2 className="font-text text-xl font-semibold text-tertiary-300">
-          werden sie teil unseres kaffee clubs
+          {props.title}
         </h2>
         <p className="mb-6 w-full text-center font-heading text-4xl font-bold uppercase text-white sm:text-6xl">
-          Hol dir deine Kaffeebox
+          {props.caption}
         </p>
-        <PrimaryLink title="Abonnieren" href="/" />
+        <PrimaryLink title={props.cta_title} href={props.cta_link} />
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="absolute top-1/2 right-0 h-32 w-32 scale-75 fill-current text-gray-300 text-opacity-10 lg:scale-100"

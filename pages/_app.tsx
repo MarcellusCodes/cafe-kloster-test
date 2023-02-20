@@ -9,6 +9,7 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import "swiper/css/grid";
+import "leaflet/dist/leaflet.css";
 
 const helveticaNeue = localFont({
   src: "../styles/Helvetica-Neue.otf",

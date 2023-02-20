@@ -33,7 +33,7 @@ const Accordion = ({
           transition={{ duration: 0.3, ease: [0.65, 0.05, 0.36, 1] }}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
-          className="h-10 w-10 fill-current text-tertiary-400"
+          className="h-10 w-10  fill-current text-tertiary-400"
         >
           <path d="M17 11h-4V7a1 1 0 0 0-1-1 1 1 0 0 0-1 1v4H7a1 1 0 0 0-1 1 1 1 0 0 0 1 1h4v4a1 1 0 0 0 1 1 1 1 0 0 0 1-1v-4h4a1 1 0 0 0 1-1 1 1 0 0 0-1-1Z" />
         </motion.svg>
@@ -64,7 +64,7 @@ const Accordion = ({
 };
 
 type TFaq = {
-  id: "string";
+  id: string;
   title: string;
   caption: string;
   image: { src: string; alt: string };
@@ -84,6 +84,7 @@ const Faq = ({ props }: { props: TFaq }) => {
           <p className="max-w-2xl font-title text-4xl text-white sm:text-6xl">
             FAQ
           </p>
+
           <motion.ul className="flex w-full flex-col gap-6">
             {props.faqs.map((faq, index) => (
               <Accordion

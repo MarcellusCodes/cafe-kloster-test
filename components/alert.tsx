@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const Alert = () => {
+type TAlert = {
+  id: string;
+  text: string;
+};
+
+const Alert = ({ props }: { props: TAlert }) => {
   const [active, setActive] = useState(true);
 
   const handleActive = () => {
@@ -16,7 +21,7 @@ const Alert = () => {
           exit="collapsed"
           variants={{
             open: { opacity: 1, height: "auto" },
-            collapsed: { opacity: 0, height: 0 },
+            collapsed: { opacity: 0, scaleY: 0, transformOrigin: "top" },
           }}
           transition={{
             duration: 0.3,
@@ -34,9 +39,8 @@ const Alert = () => {
               <path d="M12 5a1 1 0 0 0-1 1v8a1 1 0 0 0 2 0V6a1 1 0 0 0-1-1Z" />
               <rect x={11} y={17} width={2} height={2} rx={1} />
             </svg>
-            <p className=" font-heading text-xl text-tertiary-600">
-              Wichtig: Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Reprehenderit, pariatur!
+            <p className=" font-heading text-lg sm:text-xl text-tertiary-600">
+              {props.text}
             </p>
           </div>
 

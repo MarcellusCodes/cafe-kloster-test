@@ -5,9 +5,3 @@
 body {
   overflow-x: hidden;
 }
-
-@layer utilities {
-  .square {
-    aspect-ratio: 1 / 1;
-  }
-}
