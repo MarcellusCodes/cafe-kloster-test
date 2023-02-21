@@ -17,7 +17,7 @@ const ContentTwo = ({ props }: { props: TContentTwo }) => {
   return (
     <Section className="h-full bg-primary-900">
       <Container className="flex h-full flex-col gap-12 lg:gap-0">
-        <div className="mb-12 flex flex-col items-start gap-6">
+        <div className="flex flex-col items-start gap-6 lg:mb-12">
           <h2 className="font-text text-xl font-semibold text-tertiary-300">
             {props.title}
           </h2>

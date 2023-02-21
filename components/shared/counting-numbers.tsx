@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useInView } from "framer-motion";
 
 export default function CountingNumbers({
   value,
@@ -12,6 +13,8 @@ export default function CountingNumbers({
   duration?: number;
 }) {
   const [count, setCount] = useState(start);
+  const ref = useRef(null);
+  const isInView = useInView(ref);
 
   useEffect(() => {
     let startTime: number | undefined;
@@ -27,10 +30,16 @@ export default function CountingNumbers({
       setCount(currentCount);
       requestAnimationFrame(animateCount);
     };
-    requestAnimationFrame(animateCount);
-  }, [value, duration]);
+    if (isInView) {
+      requestAnimationFrame(animateCount);
+    }
+  }, [value, duration, isInView]);
 
-  return <p className={className}>{Intl.NumberFormat().format(count)}</p>;
+  return (
+    <span ref={ref} className={className}>
+      {Intl.NumberFormat().format(count)}
+    </span>
+  );
 }
 const easeOutQuad = (t: number, b: number, c: number, d: number) => {
   t /= d;

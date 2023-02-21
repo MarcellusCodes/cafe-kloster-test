@@ -15,6 +15,9 @@ import {
   CallToActionImage,
   LeafletMap,
   CookieBanner,
+  Navbar,
+  TertiaryHeading,
+  ContentFour,
 } from "@/components/index";
 import { useSignInModal } from "../components/layout/sign-in-modal";
 import { useState, Suspense } from "react";
@@ -50,7 +53,7 @@ const CtaGalleryProps = {
       alt: "test",
       date: new Date(),
       title: "Coffee Eventssss",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel modi, rem accusamus eligendi numquam error.",
+      text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita quasi nihil, error placeat perspiciatis quos dolorum officiis maxime consequatur amet ullam atque velit modi quia corrupti numquam facere totam possimus in eum eaque reprehenderit fugit quibusdam id. Obcaecati provident quam quidem aliquam earum iure beatae aspernatur id adipisci at maxime officia molestiae ut mollitia ea accusantium blanditiis magni nobis perspiciatis vero sed dolores, sint odio? Obcaecati, dolore similique mollitia tenetur omnis aut perspiciatis ex saepe nesciunt nulla laudantium voluptates expedita, impedit, eligendi velit perferendis earum eos nam ipsam quis ratione necessitatibus assumenda! Officia vero, provident tempora consequuntur dolores voluptatibus magni minima nulla voluptatum ut delectus voluptatem, eligendi ad sapiente obcaecati aut pariatur ullam ducimus, iusto corrupti velit laudantium distinctio? Consectetur corporis voluptate nam quae, quas dolor praesentium aspernatur temporibus aliquam maiores ipsum quia, architecto nesciunt placeat magni voluptates minus? Eos, maiores ipsum nihil laboriosam minima beatae laborum consequuntur fuga culpa doloremque harum maxime ducimus minus architecto quasi quo explicabo quae cupiditate incidunt distinctio. Voluptas sed reiciendis ducimus quis tenetur, nam aut quod reprehenderit adipisci animi inventore at ullam possimus velit commodi odio doloribus quam beatae quos incidunt non officiis corporis. Id, quae! Rerum dignissimos, ut, aspernatur, deleniti enim mollitia placeat officia cum aut repudiandae incidunt nostrum animi consequuntur hic recusandae earum sit error maxime qui culpa pariatur nobis impedit a soluta? Facere delectus dolor consequuntur. Soluta, numquam eos ipsa quaerat ut est, exercitationem repellat explicabo maiores animi illo voluptate eaque quo autem magnam ea eius corporis voluptatum, expedita ratione dolorem.",
     },
     {
       id: "2",
@@ -350,7 +353,7 @@ const alertProps = {
 const marqueeTextProps = {
   id: "test",
   text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam, itaque.",
-  theme: "light",
+  theme: "dark",
 };
 
 const marqueeReviewProps = {
@@ -423,24 +426,35 @@ const CallToActionImageProps = {
   image: { src: "/cta-bg-2.jpg", alt: "test" },
 };
 
+const NavbarProps = {
+  id: "test",
+  theme: "dark",
+};
+
 export default function Home() {
   const { SignInModal, setShowSignInModal } = useSignInModal();
   return (
     <>
       <motion.div className="relative">
-        <CookieBanner />
+        {/* <TertiaryHeading /> */}
         <Alert props={alertProps} />
+        <Navbar props={NavbarProps} />
         <Header props={headerProps} />
+        <CookieBanner />
+
         <CtaGallery props={CtaGalleryProps} />
-        <MarqueeText props={marqueeTextProps} />
+        <CallToActionImage props={CallToActionImageProps} />
         <MasonryGallery props={MasonryGalleryProps} />
+
+        <MarqueeText props={marqueeTextProps} />
+        <ContentFour />
         <CallToAction props={CallToActionProps} />
         <ContentOne props={ContentOneProps} />
-        {/* <ContentTwo props={ContentTwoProps} /> */}
         <MarqueeReview props={marqueeReviewProps} />
         <ContentThree props={ContentThreeProps} />
+
         <Faq props={faqProps} />
-        <CallToActionImage props={CallToActionImageProps} />
+        <ContentTwo props={ContentTwoProps} />
         <LeafletMap />
         <Footer />
       </motion.div>

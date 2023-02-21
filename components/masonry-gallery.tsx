@@ -36,7 +36,7 @@ const MasonryGallery = ({ props }: { props: TMasonryGallery }) => {
                   height: Math.floor(Math.random() * (500 - 200 + 1)) + 200,
                 }}
                 key={image.id}
-                className="group relative inline-block w-full overflow-hidden rounded-sm border-2 border-transparent hover:border-tertiary-300 active:border-tertiary-300"
+                className="group  relative inline-block w-full overflow-hidden rounded-sm outline outline-4 outline-offset-8 outline-transparent duration-300 hover:z-20 hover:scale-110 hover:shadow-xl hover:outline-tertiary-300 active:z-20 active:scale-110  active:border-tertiary-300 active:outline-tertiary-300"
               >
                 <div className="absolute top-0 left-0 z-10 h-full w-full bg-primary-900/60 opacity-0 duration-300 group-hover:opacity-100 group-active:opacity-100"></div>
                 <Image

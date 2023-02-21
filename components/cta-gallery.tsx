@@ -6,12 +6,15 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import Balancer from "react-wrap-balancer";
 import { PrimaryLink, Section } from "@/components/index";
+import * as ScrollArea from "@radix-ui/react-scroll-area";
 
 const Slide = ({ isActive, props }: { isActive: boolean; props: TSlider }) => {
-  const [showMore, setShowMore] = useState(false);
+  const [showMore, setShowMore] = useState(true);
+  const [showText, setShowText] = useState(false);
 
   const handleShowMore = () => {
     setShowMore(!showMore);
+    setShowText(!showText);
   };
 
   return (
@@ -23,38 +26,140 @@ const Slide = ({ isActive, props }: { isActive: boolean; props: TSlider }) => {
         borderColor: isActive ? "#f9bc78" : "#feeed6",
       }}
     >
-      <motion.div className=" relative inline-block h-[50%] w-full">
+      <motion.div className="relative inline-block h-[50%] w-full shrink-0">
         <Image
           alt={props.alt}
           src={props.src}
           fill={true}
-          className=" rounded-sm object-cover "
+          className="rounded-sm object-cover"
         />
       </motion.div>
-
-      <motion.div layout className="mt-6 flex flex-col items-start gap-3">
-        <span className="flex items-center gap-2 font-heading text-primary-900/80">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            data-name="Layer 1"
-            viewBox="0 0 24 24"
-            className="inline-block h-6 w-6 fill-current text-tertiary-300"
+      <AnimatePresence mode="wait" initial={false}>
+        {showText && (
+          <motion.div
+            initial="collapsed"
+            animate="open"
+            exit="collapsed"
+            variants={{
+              open: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  delay: 0.3,
+                  duration: 0.3,
+                  ease: [0.65, 0.05, 0.36, 1],
+                },
+              },
+              collapsed: {
+                opacity: 0,
+                y: 100,
+                transition: {
+                  duration: 0.3,
+                  ease: [0.65, 0.05, 0.36, 1],
+                },
+              },
+            }}
+            transition={{
+              duration: 0.3,
+              ease: [0.65, 0.05, 0.36, 1],
+            }}
+            className="h-1/2 w-full "
           >
-            <path d="M8 12H6c-1.103 0-2 .897-2 2v2c0 1.103.897 2 2 2h2c1.103 0 2-.897 2-2v-2c0-1.103-.897-2-2-2Zm-2 4v-2h2v2H6ZM19 2h-1V1a1 1 0 1 0-2 0v1H8V1a1 1 0 1 0-2 0v1H5C2.243 2 0 4.243 0 7v12c0 2.757 2.243 5 5 5h14c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5ZM5 4h14c1.654 0 3 1.346 3 3v1H2V7c0-1.654 1.346-3 3-3Zm14 18H5c-1.654 0-3-1.346-3-3v-9h20v9c0 1.654-1.346 3-3 3Z" />
-          </svg>
-          24.10.2023
-        </span>
-        <h3 className="font-heading text-3xl text-primary-900">
-          {props.title}
-        </h3>
-        <p className="font-text text-xl  text-secondary-900/80">{props.text}</p>
-        <motion.button
-          onClick={handleShowMore}
-          className=" font-heading text-lg text-tertiary-300 hover:bg-tertiary-100 "
-        >
-          Mehr Erfahren
-        </motion.button>
-      </motion.div>
+            <ScrollArea.Root className="h-full w-full overflow-hidden rounded bg-white">
+              <ScrollArea.Viewport className="relative h-full w-full rounded">
+                <button
+                  onClick={handleShowMore}
+                  className="absolute top-2 right-4 z-50"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    className="h-6 w-6 shrink-0 fill-current text-primary-900"
+                  >
+                    <path d="M18 6a1 1 0 0 0-1.414 0L12 10.586 7.414 6A1 1 0 0 0 6 6a1 1 0 0 0 0 1.414L10.586 12 6 16.586A1 1 0 0 0 6 18a1 1 0 0 0 1.414 0L12 13.414 16.586 18A1 1 0 0 0 18 18a1 1 0 0 0 0-1.414L13.414 12 18 7.414A1 1 0 0 0 18 6Z" />
+                  </svg>
+                </button>
+                <div className="pr-4 pt-6">
+                  <p className="font-text text-xl text-secondary-900/80">
+                    {props.text}
+                  </p>
+                </div>
+              </ScrollArea.Viewport>
+              <ScrollArea.Scrollbar
+                className="flex touch-none select-none bg-blackA6 p-0.5 transition-colors duration-[160ms] ease-out hover:bg-blackA8 data-[orientation=horizontal]:h-2.5 data-[orientation=vertical]:w-2.5 data-[orientation=horizontal]:flex-col"
+                orientation="vertical"
+              >
+                <ScrollArea.Thumb className="relative flex-1 rounded-[10px] bg-mauve10 before:absolute before:top-1/2 before:left-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-['']" />
+              </ScrollArea.Scrollbar>
+              <ScrollArea.Scrollbar
+                className="flex touch-none select-none bg-blackA6 p-0.5 transition-colors duration-[160ms] ease-out hover:bg-blackA8 data-[orientation=horizontal]:h-2.5 data-[orientation=vertical]:w-2.5 data-[orientation=horizontal]:flex-col"
+                orientation="horizontal"
+              >
+                <ScrollArea.Thumb className="relative flex-1 rounded-[10px] bg-mauve10 before:absolute before:top-1/2 before:left-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-['']" />
+              </ScrollArea.Scrollbar>
+              <ScrollArea.Corner className="bg-blackA8" />
+            </ScrollArea.Root>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <AnimatePresence initial={false}>
+        {showMore && (
+          <motion.div
+            initial="collapsed"
+            animate="open"
+            exit="collapsed"
+            variants={{
+              open: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  delay: 0.4,
+                  duration: 0.3,
+                  ease: [0.65, 0.05, 0.36, 1],
+                },
+              },
+              collapsed: {
+                transition: {
+                  duration: 0.3,
+                  ease: [0.65, 0.05, 0.36, 1],
+                },
+                opacity: 0,
+                y: 100,
+              },
+            }}
+            transition={{
+              duration: 0.3,
+              ease: [0.65, 0.05, 0.36, 1],
+            }}
+            layout
+            className="mt-6 flex flex-col items-start gap-3"
+          >
+            <span className="flex items-center gap-2 font-heading text-primary-900/80">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                data-name="Layer 1"
+                viewBox="0 0 24 24"
+                className="inline-block h-6 w-6 fill-current text-tertiary-300"
+              >
+                <path d="M8 12H6c-1.103 0-2 .897-2 2v2c0 1.103.897 2 2 2h2c1.103 0 2-.897 2-2v-2c0-1.103-.897-2-2-2Zm-2 4v-2h2v2H6ZM19 2h-1V1a1 1 0 1 0-2 0v1H8V1a1 1 0 1 0-2 0v1H5C2.243 2 0 4.243 0 7v12c0 2.757 2.243 5 5 5h14c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5ZM5 4h14c1.654 0 3 1.346 3 3v1H2V7c0-1.654 1.346-3 3-3Zm14 18H5c-1.654 0-3-1.346-3-3v-9h20v9c0 1.654-1.346 3-3 3Z" />
+              </svg>
+              24.10.2023
+            </span>
+            <h3 className="font-heading text-3xl text-primary-900">
+              {props.title}
+            </h3>
+            <p className="line-clamp font-text  text-xl text-secondary-900/80">
+              {props.text}
+            </p>
+            <motion.button
+              onClick={handleShowMore}
+              className="font-heading text-lg text-tertiary-300 hover:bg-tertiary-100 "
+            >
+              Mehr Erfahren
+            </motion.button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 };
@@ -87,7 +192,7 @@ type TCtaGallery = {
 const CtaGallery = ({ props }: { props: TCtaGallery }) => {
   const [swiperInstance, setSwiperInstance] = useState(null);
   return (
-    <Section className="bg-secondary-50">
+    <Section className="bg-secondary-50 pb-32 xl:pb-20">
       <div className="container z-0 mx-auto flex h-full w-full flex-col items-start gap-12 py-2 lg:flex-row">
         <div className="relative z-20 flex w-full flex-col items-start lg:w-1/2">
           <svg
