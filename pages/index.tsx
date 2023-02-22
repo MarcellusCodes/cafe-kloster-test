@@ -18,6 +18,7 @@ import {
   Navbar,
   TertiaryHeading,
   ContentFour,
+  Tab,
 } from "@/components/index";
 import { useSignInModal } from "../components/layout/sign-in-modal";
 import { useState, Suspense } from "react";
@@ -452,7 +453,7 @@ export default function Home() {
         <ContentOne props={ContentOneProps} />
         <MarqueeReview props={marqueeReviewProps} />
         <ContentThree props={ContentThreeProps} />
-
+        <Tab />
         <Faq props={faqProps} />
         <ContentTwo props={ContentTwoProps} />
         <LeafletMap />

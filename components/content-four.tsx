@@ -68,7 +68,7 @@ const ContentFour = () => {
             eos voluptates maxime nobis distinctio, velit quis! Aspernatur
             voluptatem voluptatum quas, optio dolorem accusantium!
           </p>
-          <ul className="grid grid-cols-3 gap-6">
+          <ul className="flex flex-row flex-wrap items-center gap-6">
             <li className="flex flex-col items-start gap-1 font-heading text-xl text-primary-900 text-opacity-80">
               <span className=" flex flex-row items-center font-heading text-4xl text-primary-900">
                 <CountingNumbers value={10000} />

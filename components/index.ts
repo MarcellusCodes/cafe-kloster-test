@@ -21,3 +21,4 @@ export { default as LeafletMap } from "./leaflet-map";
 export { default as CookieBanner } from "./cookie-banner";
 export { default as TertiaryHeading } from "./tertiary-heading";
 export { default as ContentFour } from "./content-four";
+export { default as Tab } from "./tab";
