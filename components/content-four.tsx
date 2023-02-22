@@ -96,11 +96,7 @@ const ContentFour = () => {
               Zubereitete Getränke
             </li>
             <li className="flex flex-col items-start gap-1 font-heading text-xl text-primary-900 text-opacity-80">
-              <motion.span
-                whileInView={{ opacity: 1 }}
-                initial={{ opacity: 0 }}
-                className=" flex flex-row items-center font-heading text-4xl text-primary-900"
-              >
+              <span className=" flex flex-row items-center font-heading text-4xl text-primary-900">
                 <CountingNumbers value={15000} />
                 <motion.svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +105,7 @@ const ContentFour = () => {
                 >
                   <path d="M17 11h-4V7a1 1 0 0 0-1-1 1 1 0 0 0-1 1v4H7a1 1 0 0 0-1 1 1 1 0 0 0 1 1h4v4a1 1 0 0 0 1 1 1 1 0 0 0 1-1v-4h4a1 1 0 0 0 1-1 1 1 0 0 0-1-1Z" />
                 </motion.svg>
-              </motion.span>
+              </span>
               Essen Serviert
             </li>
           </ul>
