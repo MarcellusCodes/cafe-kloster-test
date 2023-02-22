@@ -436,7 +436,7 @@ export default function Home() {
   const { SignInModal, setShowSignInModal } = useSignInModal();
   return (
     <>
-      <motion.div className="relative">
+      <motion.div className="relative overflow-x-hidden">
         {/* <TertiaryHeading /> */}
         <Alert props={alertProps} />
         <Navbar props={NavbarProps} />
