@@ -93,7 +93,7 @@ const Faq = ({ props }: { props: TFaq }) => {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
-          className={`absolute top-12 left-1/3 h-32 w-32 scale-75 fill-current text-gray-300 ${
+          className={`absolute top-12 left-1/3 w-16 h-16 sm:h-32 sm:w-32 fill-current text-gray-300 ${
             props.theme === "light" ? "" : "text-opacity-10"
           } lg:scale-100`}
         >

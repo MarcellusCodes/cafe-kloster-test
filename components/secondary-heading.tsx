@@ -10,6 +10,8 @@ import {
   cubicBezier,
   circOut,
   useInView,
+  easeOut,
+  easeIn,
 } from "framer-motion";
 
 type TSecondaryHeading = {
@@ -22,30 +24,31 @@ type TSecondaryHeading = {
 
 const SecondaryHeading = ({ props }: { props: TSecondaryHeading }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [elementHeight, setElementHeight] = useState<number>(0);
-  const { scrollY } = useScroll();
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["end start", "start end"],
+  });
 
   const transformYImage = useTransform(
-    scrollY,
-    [0, elementHeight],
-    ["0", "-25%"],
-    { ease: circOut },
+    scrollYProgress,
+    [1, 0],
+    ["0%", "-25%"],
+    {
+      ease: cubicBezier(0.22, 0.61, 0.36, 1),
+    },
   );
 
-  const scaleImage = useTransform(scrollY, [0, elementHeight], [1, 1.2], {
+  const scaleImage = useTransform(scrollYProgress, [1, 0], [1, 1.2], {
     ease: circOut,
   });
 
-  const rotateSvg = useTransform(scrollY, [0, elementHeight], [0, 360], {
-    ease: circOut,
+  const rotateSvg = useTransform(scrollYProgress, [1, 0], [-360, 360], {
+    ease: cubicBezier(0.6, -0.28, 0.74, 0.05),
   });
 
-  useEffect(() => {
-    const element = containerRef.current?.offsetHeight;
-    setElementHeight(element);
-  }, []);
   return (
-    <div ref={containerRef}>
+    <div ref={containerRef} className="relative  overflow-hidden">
       <Section
         className={`scrollbar-hide overflow-y-hidden  ${
           props.theme === "light" ? "bg-primary-50" : "bg-primary-900"
@@ -55,7 +58,7 @@ const SecondaryHeading = ({ props }: { props: TSecondaryHeading }) => {
           <motion.svg
             style={{ rotate: rotateSvg }}
             xmlns="http://www.w3.org/2000/svg"
-            className={`absolute -top-4 right-0 h-32 w-32 fill-current text-gray-300 ${
+            className={`absolute -top-4 right-0 h-16 w-16 fill-current text-gray-300 sm:h-32 sm:w-32 ${
               props.theme === "light" ? "" : "text-opacity-10"
             }`}
             viewBox="0 0 512 512"

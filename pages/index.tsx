@@ -548,22 +548,18 @@ export default function Home() {
         <Faq props={faqProps} />
         <Header props={headerProps} />
         <CookieBanner />
-
         <CtaGallery props={CtaGalleryProps} />
         <CallToActionImage props={CallToActionImageProps} />
         <MasonryGallery props={MasonryGalleryProps} />
-
         <MarqueeText props={marqueeTextProps} />
         <ContentFour />
         <CallToAction props={CallToActionProps} />
         <ContentOne props={ContentOneProps} />
-
         <ContentThree props={ContentThreeProps} />
         <ContentTwo props={ContentTwoProps} />
         <Tab props={TabProps} />
         <MarqueeReview props={marqueeReviewProps} />
         <CallToAction props={CallToActionProps} />
-
         <LeafletMap />
         <Footer />
       </motion.div>
