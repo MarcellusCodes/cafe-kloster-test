@@ -209,7 +209,7 @@ const CallToActionProps = {
   caption: "Jetzt bestellen",
   cta_title: "Abonnieren",
   cta_link: "/",
-  theme: "light",
+  theme: "dark",
 };
 
 const ContentOneProps = {

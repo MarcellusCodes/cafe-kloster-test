@@ -28,7 +28,7 @@ const ContentTwo = ({ props }: { props: TContentTwo }) => {
         {props.boxes.map((box, index) => (
           <div
             key={box.id}
-            className={` flex flex-col-reverse items-center lg:mb-0 lg:gap-12  ${
+            className={`flex flex-col-reverse items-center lg:mb-0 lg:gap-12  ${
               index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"
             }`}
           >

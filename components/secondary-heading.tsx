@@ -84,7 +84,7 @@ const SecondaryHeading = ({ props }: { props: TSecondaryHeading }) => {
           </p>
           <motion.div
             style={{ y: transformYImage, scale: scaleImage }}
-            className="scrollbar-hide relative inline-block h-[300px] w-full lg:h-[500px]"
+            className="scrollbar-hide relative mt-12 inline-block h-[300px] w-full lg:h-[500px]"
           >
             <Image
               alt={props.image.alt}

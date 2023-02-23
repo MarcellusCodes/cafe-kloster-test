@@ -27,7 +27,7 @@ const Accordion = ({
   };
   return (
     <motion.li
-      className={`grid w-full  grid-cols-2 grid-rows-1 items-center justify-between border-b-2 border-gray-300 border-opacity-80 font-heading text-xl ${
+      className={`grid w-full grid-cols-2 grid-rows-1 items-center justify-between border-b-2 border-gray-300 border-opacity-80 font-heading text-xl ${
         theme === "light" ? "text-primary-900" : "text-white"
       } `}
     >
@@ -39,7 +39,7 @@ const Accordion = ({
           transition={{ duration: 0.3, ease: [0.65, 0.05, 0.36, 1] }}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
-          className="h-10 w-10  fill-current text-tertiary-400"
+          className="h-10 w-10 fill-current text-tertiary-400"
         >
           <path d="M17 11h-4V7a1 1 0 0 0-1-1 1 1 0 0 0-1 1v4H7a1 1 0 0 0-1 1 1 1 0 0 0 1 1h4v4a1 1 0 0 0 1 1 1 1 0 0 0 1-1v-4h4a1 1 0 0 0 1-1 1 1 0 0 0-1-1Z" />
         </motion.svg>
@@ -93,7 +93,7 @@ const Faq = ({ props }: { props: TFaq }) => {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
-          className={`absolute top-12 left-1/3 w-16 h-16 sm:h-32 sm:w-32 fill-current text-gray-300 ${
+          className={`absolute top-12 right-12 h-16 w-16 fill-current text-gray-300 sm:left-1/3 sm:h-32 sm:w-32 ${
             props.theme === "light" ? "" : "text-opacity-10"
           } lg:scale-100`}
         >
@@ -110,7 +110,6 @@ const Faq = ({ props }: { props: TFaq }) => {
           >
             FAQ
           </p>
-
           <motion.ul className="flex w-full flex-col gap-6">
             {props.faqs.map((faq, index) => (
               <Accordion
