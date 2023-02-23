@@ -18,7 +18,7 @@ const ContentFour = () => {
   return (
     <Section className="bg-secondary-50">
       <Container className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:gap-12">
-        <div className="h-[300px] w-full lg:h-[500px] lg:w-1/2">
+        <div className="shadow-main h-[300px] w-full lg:h-[500px] lg:w-1/2 ">
           <Swiper
             modules={[Autoplay, Pagination]}
             spaceBetween={50}
@@ -32,8 +32,8 @@ const ContentFour = () => {
             onSwiper={(swiper) => console.log(swiper)}
             className="relative z-20 h-full w-full cursor-grab overflow-auto rounded-sm active:cursor-grabbing"
           >
-            <SwiperSlide className="relative z-20 h-full w-full rounded-sm">
-              <div className="full relative h-full w-full">
+            <SwiperSlide className="relative z-20 h-full w-full rounded-sm ">
+              <div className="full relative h-full w-full ">
                 <Image
                   alt="test"
                   src="/cta-bg-2.jpg"
@@ -68,7 +68,7 @@ const ContentFour = () => {
             eos voluptates maxime nobis distinctio, velit quis! Aspernatur
             voluptatem voluptatum quas, optio dolorem accusantium!
           </p>
-          <ul className="flex flex-row flex-wrap items-center gap-6">
+          <ul className="flex shrink-0 flex-row flex-wrap items-start  gap-3">
             <li className="flex flex-col items-start gap-1 font-heading text-xl text-primary-900 text-opacity-80">
               <span className=" flex flex-row items-center font-heading text-4xl text-primary-900">
                 <CountingNumbers value={10000} />

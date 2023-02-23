@@ -50,7 +50,7 @@ const ContentOne = ({ props }: { props: TContentOne }) => {
             {props.images.map((image, index) => (
               <div
                 key={image.id}
-                className={`relative ${contentOneImgGrid[index]} rounded-sm outline outline-4  outline-offset-8  outline-transparent duration-300 ease-out hover:z-50 hover:scale-[1.1!important] hover:outline-tertiary-300 active:z-50 active:scale-[1.1!important] active:outline-tertiary-300`}
+                className={`relative ${contentOneImgGrid[index]}  rounded-sm outline outline-4  outline-offset-8  outline-transparent duration-300 ease-out hover:z-50 hover:scale-[1.1!important] hover:outline-tertiary-300 active:z-50 active:scale-[1.1!important] active:outline-tertiary-300`}
               >
                 <Image
                   alt={image.alt}

@@ -46,7 +46,7 @@ const MarqueeReview = ({ props }: { props: TMarqueeReview }) => {
             {props.reviews.map((review) => (
               <article
                 key={review.id}
-                className="mr-4 grid grid-cols-1 gap-2 rounded-sm border-2 border-gray-300 border-opacity-10 bg-gray-100 bg-opacity-[0.02]  p-6 hover:border-tertiary-300 active:border-tertiary-300"
+                className="mr-4 grid w-[250px] grid-cols-1 gap-2 rounded-sm border-2 border-gray-300 border-opacity-10 bg-gray-100 bg-opacity-[0.02] p-6  hover:border-tertiary-300 active:border-tertiary-300 sm:w-full sm:max-w-lg"
               >
                 <div className="flex flex-row items-center gap-2">
                   <div className="relative h-12 w-12 overflow-hidden rounded-full">

@@ -12,3 +12,7 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none !important;
+}

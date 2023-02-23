@@ -8,7 +8,7 @@ type TNavbar = {
 const Navbar = ({ props }: { props: TNavbar }) => {
   return (
     <nav
-      className={`w-full border-b-2 border-secondary-200  px-6 ${
+      className={`w-full border-b-2 border-secondary-200 px-6 ${
         props.theme === "light"
           ? "border-secondary-200 border-opacity-80 bg-secondary-50"
           : "border-gray-300 border-opacity-10 bg-primary-900"

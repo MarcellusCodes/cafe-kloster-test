@@ -8,7 +8,7 @@ export default function CountingNumbers({
   duration = 800,
 }: {
   value: number;
-  className: string;
+  className?: string;
   start?: number;
   duration?: number;
 }) {

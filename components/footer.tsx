@@ -88,7 +88,7 @@ const Footer = () => {
                     ease: [0.77, 0, 0.18, 1],
                   },
                 }}
-                className="rounded-xs absolute top-0 left-0  z-0 h-full w-full bg-primary-900/20"
+                className="rounded-xs absolute top-0 left-0 z-0  inline-block h-full w-full bg-primary-900/20"
                 layoutId="highlight"
               />
             ) : null}

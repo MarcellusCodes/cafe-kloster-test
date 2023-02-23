@@ -19,6 +19,7 @@ import {
   TertiaryHeading,
   ContentFour,
   Tab,
+  SecondaryHeading,
 } from "@/components/index";
 import { useSignInModal } from "../components/layout/sign-in-modal";
 import { useState, Suspense } from "react";
@@ -208,6 +209,7 @@ const CallToActionProps = {
   caption: "Jetzt bestellen",
   cta_title: "Abonnieren",
   cta_link: "/",
+  theme: "light",
 };
 
 const ContentOneProps = {
@@ -337,13 +339,14 @@ const faqProps = {
   caption: "FAQ",
   image: {
     alt: "alt",
-    src: "/faq.jpg",
+    src: "/cta-bg.jpg",
   },
   faqs: [
     { id: "string", question: "string", answer: "string" },
     { id: "string", question: "string", answer: "string" },
     { id: "string", question: "string", answer: "string" },
   ],
+  theme: "dark",
 };
 
 const alertProps = {
@@ -432,6 +435,107 @@ const NavbarProps = {
   theme: "dark",
 };
 
+const TabProps = {
+  id: "test",
+  title: "Geschichte",
+  caption: "Über die Entstehung",
+  tabs: [
+    {
+      id: "test1",
+      title: "SuperTest",
+      image: { src: "/cta-bg-2.jpg", alt: "test" },
+      heading: "Test",
+      text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum ratione eius dolorum vel nemo quo accusantium voluptatum illum nam, soluta libero inventore dolorem odit atque officia rem maxime alias ipsum quas tempore asperiores omnis fugit non. Aut ratione blanditiis voluptatum tenetur tempore, exercitationem sit explicabo voluptate alias, at nam, illum natus. Assumenda repellat ipsam deleniti voluptas, aliquam suscipit in temporibus laboriosam obcaecati omnis explicabo quasi non, architecto aut eos. Vel nulla doloremque totam reiciendis veniam laboriosam eos nam. Quae rem reprehenderit esse! Commodi nam neque voluptatibus ullam iure unde quibusdam voluptates aliquam odio voluptatem perferendis alias quis, illum velit itaque minima cupiditate! Voluptas, cum quidem ducimus molestias delectus facilis excepturi nulla harum accusamus voluptates error quia inventore corporis dolores cumque in sequi tempore! Deleniti harum sequi reiciendis neque mollitia architecto ut delectus provident debitis doloribus, autem id eligendi voluptate! Nihil sit labore quos maiores veniam pariatur voluptatibus ipsum rem fugit.",
+    },
+    {
+      id: "test2",
+      title: "SuperTest2",
+      image: { src: "/cta-bg.jpg", alt: "test" },
+      heading: "Test2",
+      text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum ratione eius dolorum vel nemo quo accusantium voluptatum illum nam, soluta libero inventore dolorem odit atque officia rem maxime alias ipsum quas tempore asperiores omnis fugit non. Aut ratione blanditiis voluptatum tenetur tempore, exercitationem sit explicabo voluptate alias, at nam, illum natus. Assumenda repellat ipsam deleniti voluptas, aliquam suscipit in temporibus laboriosam obcaecati omnis explicabo quasi non, architecto aut eos. Vel nulla doloremque totam reiciendis veniam laboriosam eos nam. Quae rem reprehenderit esse! Commodi nam neque voluptatibus ullam iure unde quibusdam voluptates aliquam odio voluptatem perferendis alias quis, illum velit itaque minima cupiditate! Voluptas, cum quidem ducimus molestias delectus facilis excepturi nulla harum accusamus voluptates error quia inventore corporis dolores cumque in sequi tempore! Deleniti harum sequi reiciendis neque mollitia architecto ut delectus provident debitis doloribus, autem id eligendi voluptate! Nihil sit labore quos maiores veniam pariatur voluptatibus ipsum rem fugit.2",
+    },
+    {
+      id: "test3",
+      title: "SuperTest3",
+      image: { src: "/cta-bg.jpg", alt: "test" },
+      heading: "Test3",
+      text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum ratione eius dolorum vel nemo quo accusantium voluptatum illum nam, soluta libero inventore dolorem odit atque officia rem maxime alias ipsum quas tempore asperiores omnis fugit non. Aut ratione blanditiis voluptatum tenetur tempore, exercitationem sit explicabo voluptate alias, at nam, illum natus. Assumenda repellat ipsam deleniti voluptas, aliquam suscipit in temporibus laboriosam obcaecati omnis explicabo quasi non, architecto aut eos. Vel nulla doloremque totam reiciendis veniam laboriosam eos nam. Quae rem reprehenderit esse! Commodi nam neque voluptatibus ullam iure unde quibusdam voluptates aliquam odio voluptatem perferendis alias quis, illum velit itaque minima cupiditate! Voluptas, cum quidem ducimus molestias delectus facilis excepturi nulla harum accusamus voluptates error quia inventore corporis dolores cumque in sequi tempore! Deleniti harum sequi reiciendis neque mollitia architecto ut delectus provident debitis doloribus, autem id eligendi voluptate! Nihil sit labore quos maiores veniam pariatur voluptatibus ipsum rem fugit.2",
+    },
+    {
+      id: "test4",
+      title: "SuperTest4",
+      image: { src: "/cta-bg.jpg", alt: "test" },
+      heading: "Test4",
+      text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum ratione eius dolorum vel nemo quo accusantium voluptatum illum nam, soluta libero inventore dolorem odit atque officia rem maxime alias ipsum quas tempore asperiores omnis fugit non. Aut ratione blanditiis voluptatum tenetur tempore, exercitationem sit explicabo voluptate alias, at nam, illum natus. Assumenda repellat ipsam deleniti voluptas, aliquam suscipit in temporibus laboriosam obcaecati omnis explicabo quasi non, architecto aut eos. Vel nulla doloremque totam reiciendis veniam laboriosam eos nam. Quae rem reprehenderit esse! Commodi nam neque voluptatibus ullam iure unde quibusdam voluptates aliquam odio voluptatem perferendis alias quis, illum velit itaque minima cupiditate! Voluptas, cum quidem ducimus molestias delectus facilis excepturi nulla harum accusamus voluptates error quia inventore corporis dolores cumque in sequi tempore! Deleniti harum sequi reiciendis neque mollitia architecto ut delectus provident debitis doloribus, autem id eligendi voluptate! Nihil sit labore quos maiores veniam pariatur voluptatibus ipsum rem fugit.2",
+    },
+    {
+      id: "test9",
+      title: "SuperTest9",
+      image: { src: "/cta-bg.jpg", alt: "test" },
+      heading: "Test9",
+      text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum ratione eius dolorum vel nemo quo accusantium voluptatum illum nam, soluta libero inventore dolorem odit atque officia rem maxime alias ipsum quas tempore asperiores omnis fugit non. Aut ratione blanditiis voluptatum tenetur tempore, exercitationem sit explicabo voluptate alias, at nam, illum natus. Assumenda repellat ipsam deleniti voluptas, aliquam suscipit in temporibus laboriosam obcaecati omnis explicabo quasi non, architecto aut eos. Vel nulla doloremque totam reiciendis veniam laboriosam eos nam. Quae rem reprehenderit esse! Commodi nam neque voluptatibus ullam iure unde quibusdam voluptates aliquam odio voluptatem perferendis alias quis, illum velit itaque minima cupiditate! Voluptas, cum quidem ducimus molestias delectus facilis excepturi nulla harum accusamus voluptates error quia inventore corporis dolores cumque in sequi tempore! Deleniti harum sequi reiciendis neque mollitia architecto ut delectus provident debitis doloribus, autem id eligendi voluptate! Nihil sit labore quos maiores veniam pariatur voluptatibus ipsum rem fugit.2",
+    },
+    {
+      id: "test5",
+      title: "SuperTest5",
+      image: { src: "/cta-bg.jpg", alt: "test" },
+      heading: "Test5",
+      text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum ratione eius dolorum vel nemo quo accusantium voluptatum illum nam, soluta libero inventore dolorem odit atque officia rem maxime alias ipsum quas tempore asperiores omnis fugit non. Aut ratione blanditiis voluptatum tenetur tempore, exercitationem sit explicabo voluptate alias, at nam, illum natus. Assumenda repellat ipsam deleniti voluptas, aliquam suscipit in temporibus laboriosam obcaecati omnis explicabo quasi non, architecto aut eos. Vel nulla doloremque totam reiciendis veniam laboriosam eos nam. Quae rem reprehenderit esse! Commodi nam neque voluptatibus ullam iure unde quibusdam voluptates aliquam odio voluptatem perferendis alias quis, illum velit itaque minima cupiditate! Voluptas, cum quidem ducimus molestias delectus facilis excepturi nulla harum accusamus voluptates error quia inventore corporis dolores cumque in sequi tempore! Deleniti harum sequi reiciendis neque mollitia architecto ut delectus provident debitis doloribus, autem id eligendi voluptate! Nihil sit labore quos maiores veniam pariatur voluptatibus ipsum rem fugit.2",
+    },
+    {
+      id: "test6",
+      title: "SuperTest6",
+      image: { src: "/cta-bg.jpg", alt: "test" },
+      heading: "Test6",
+      text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum ratione eius dolorum vel nemo quo accusantium voluptatum illum nam, soluta libero inventore dolorem odit atque officia rem maxime alias ipsum quas tempore asperiores omnis fugit non. Aut ratione blanditiis voluptatum tenetur tempore, exercitationem sit explicabo voluptate alias, at nam, illum natus. Assumenda repellat ipsam deleniti voluptas, aliquam suscipit in temporibus laboriosam obcaecati omnis explicabo quasi non, architecto aut eos. Vel nulla doloremque totam reiciendis veniam laboriosam eos nam. Quae rem reprehenderit esse! Commodi nam neque voluptatibus ullam iure unde quibusdam voluptates aliquam odio voluptatem perferendis alias quis, illum velit itaque minima cupiditate! Voluptas, cum quidem ducimus molestias delectus facilis excepturi nulla harum accusamus voluptates error quia inventore corporis dolores cumque in sequi tempore! Deleniti harum sequi reiciendis neque mollitia architecto ut delectus provident debitis doloribus, autem id eligendi voluptate! Nihil sit labore quos maiores veniam pariatur voluptatibus ipsum rem fugit.2",
+    },
+    {
+      id: "test7",
+      title: "SuperTest7",
+      image: { src: "/cta-bg.jpg", alt: "test" },
+      heading: "Test7",
+      text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum ratione eius dolorum vel nemo quo accusantium voluptatum illum nam, soluta libero inventore dolorem odit atque officia rem maxime alias ipsum quas tempore asperiores omnis fugit non. Aut ratione blanditiis voluptatum tenetur tempore, exercitationem sit explicabo voluptate alias, at nam, illum natus. Assumenda repellat ipsam deleniti voluptas, aliquam suscipit in temporibus laboriosam obcaecati omnis explicabo quasi non, architecto aut eos. Vel nulla doloremque totam reiciendis veniam laboriosam eos nam. Quae rem reprehenderit esse! Commodi nam neque voluptatibus ullam iure unde quibusdam voluptates aliquam odio voluptatem perferendis alias quis, illum velit itaque minima cupiditate! Voluptas, cum quidem ducimus molestias delectus facilis excepturi nulla harum accusamus voluptates error quia inventore corporis dolores cumque in sequi tempore! Deleniti harum sequi reiciendis neque mollitia architecto ut delectus provident debitis doloribus, autem id eligendi voluptate! Nihil sit labore quos maiores veniam pariatur voluptatibus ipsum rem fugit.2",
+    },
+    {
+      id: "test8",
+      title: "SuperTest8",
+      image: { src: "/cta-bg.jpg", alt: "test" },
+      heading: "Test8",
+      text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum ratione eius dolorum vel nemo quo accusantium voluptatum illum nam, soluta libero inventore dolorem odit atque officia rem maxime alias ipsum quas tempore asperiores omnis fugit non. Aut ratione blanditiis voluptatum tenetur tempore, exercitationem sit explicabo voluptate alias, at nam, illum natus. Assumenda repellat ipsam deleniti voluptas, aliquam suscipit in temporibus laboriosam obcaecati omnis explicabo quasi non, architecto aut eos. Vel nulla doloremque totam reiciendis veniam laboriosam eos nam. Quae rem reprehenderit esse! Commodi nam neque voluptatibus ullam iure unde quibusdam voluptates aliquam odio voluptatem perferendis alias quis, illum velit itaque minima cupiditate! Voluptas, cum quidem ducimus molestias delectus facilis excepturi nulla harum accusamus voluptates error quia inventore corporis dolores cumque in sequi tempore! Deleniti harum sequi reiciendis neque mollitia architecto ut delectus provident debitis doloribus, autem id eligendi voluptate! Nihil sit labore quos maiores veniam pariatur voluptatibus ipsum rem fugit.2",
+    },
+  ],
+  images: [
+    {
+      id: "test",
+      src: "/cta-bg-2.jpg",
+      alt: "test",
+    },
+    {
+      id: "test",
+      src: "/cta-bg.jpg",
+      alt: "test",
+    },
+    {
+      id: "test",
+      src: "/header-image.jpg",
+      alt: "test",
+    },
+    {
+      id: "test",
+      src: "/header-preview-2.jpg",
+      alt: "test",
+    },
+  ],
+};
+
+const SecondaryHeadingProps = {
+  id: "test",
+  title: "Öffnungszeiten",
+  caption: "Lorem ipsum dolor sit amet consectetur.",
+  image: { src: "/cta-bg-2.jpg", alt: "test" },
+  theme: "dark",
+};
+
 export default function Home() {
   const { SignInModal, setShowSignInModal } = useSignInModal();
   return (
@@ -440,6 +544,8 @@ export default function Home() {
         {/* <TertiaryHeading /> */}
         <Alert props={alertProps} />
         <Navbar props={NavbarProps} />
+        <SecondaryHeading props={SecondaryHeadingProps} />
+        <Faq props={faqProps} />
         <Header props={headerProps} />
         <CookieBanner />
 
@@ -451,11 +557,13 @@ export default function Home() {
         <ContentFour />
         <CallToAction props={CallToActionProps} />
         <ContentOne props={ContentOneProps} />
-        <MarqueeReview props={marqueeReviewProps} />
+
         <ContentThree props={ContentThreeProps} />
-        <Tab />
-        <Faq props={faqProps} />
         <ContentTwo props={ContentTwoProps} />
+        <Tab props={TabProps} />
+        <MarqueeReview props={marqueeReviewProps} />
+        <CallToAction props={CallToActionProps} />
+
         <LeafletMap />
         <Footer />
       </motion.div>
