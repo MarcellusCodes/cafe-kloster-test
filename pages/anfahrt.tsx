@@ -541,7 +541,7 @@ export default function Anfahrt() {
   return (
     <>
       <motion.div className="relative overflow-x-hidden">
-        <LoadingScreen />
+        {/* <LoadingScreen /> */}
         {/* <TertiaryHeading /> */}
         <Alert props={alertProps} />
         <Navbar props={NavbarProps} />

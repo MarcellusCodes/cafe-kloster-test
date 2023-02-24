@@ -41,9 +41,7 @@ export default function MyApp({
             helveticaNeueBold.variable,
           )}
         >
-          <AnimatePresence mode="wait" initial={false}>
-            <Component {...pageProps} key={router.asPath} />
-          </AnimatePresence>
+          <Component {...pageProps} key={router.asPath} />
         </div>
       </RWBProvider>
       <Analytics />
