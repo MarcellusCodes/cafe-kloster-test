@@ -346,7 +346,7 @@ const faqProps = {
     { id: "string", question: "string", answer: "string" },
     { id: "string", question: "string", answer: "string" },
   ],
-  theme: "dark",
+  theme: "light",
 };
 
 const alertProps = {
@@ -532,7 +532,7 @@ const SecondaryHeadingProps = {
   id: "test",
   title: "Über Uns",
   caption: "Alles zu unserer Enstehung sowie zu unseren Zielen",
-  image: { src: "/cta-bg-2.jpg", alt: "test" },
+  image: { src: "/cta-bg.jpg", alt: "test" },
   theme: "dark",
 };
 
@@ -549,8 +549,9 @@ export default function UeberUns() {
         <ContentThree props={ContentThreeProps} />
         <CallToAction props={CallToActionProps} />
         <Tab props={TabProps} />
-        <Faq props={faqProps} />
+
         <ContentTwo props={ContentTwoProps} />
+        <Faq props={faqProps} />
         <LeafletMap />
         <CookieBanner />
         {/* <CallToActionImage props={CallToActionImageProps} />

@@ -105,6 +105,7 @@ const Header = ({ props }: { props: THeader }) => {
                     alt={image.alt}
                     src={image.src}
                     fill={true}
+                    priority={true}
                     className="z-20 rounded-sm object-cover"
                   />
                 </motion.div>
