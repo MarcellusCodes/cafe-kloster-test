@@ -38,7 +38,7 @@ const navItems = [
   {
     id: 5,
     name: "Über",
-    link: "/über-uns",
+    link: "/ueber-uns",
     icon: (
       <g data-name="01 align center">
         <path d="M12 24a12 12 0 1 1 12-12 12.013 12.013 0 0 1-12 12Zm0-22a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Z" />

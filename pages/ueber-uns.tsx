@@ -530,13 +530,13 @@ const TabProps = {
 
 const SecondaryHeadingProps = {
   id: "test",
-  title: "Öffnungszeiten",
-  caption: "Lorem ipsum dolor sit amet consectetur.",
+  title: "Über Uns",
+  caption: "Alles zu unserer Enstehung sowie zu unseren Zielen",
   image: { src: "/cta-bg-2.jpg", alt: "test" },
   theme: "dark",
 };
 
-export default function Home() {
+export default function UeberUns() {
   const { SignInModal, setShowSignInModal } = useSignInModal();
   return (
     <>
@@ -544,29 +544,23 @@ export default function Home() {
         <LoadingScreen />
         {/* <TertiaryHeading /> */}
         <Alert props={alertProps} />
-        <Header props={headerProps} />
-        <CtaGallery props={CtaGalleryProps} />
-        <MarqueeText props={marqueeTextProps} />
-        <ContentFour />
-        <MasonryGallery props={MasonryGalleryProps} />
-        <MarqueeReview props={marqueeReviewProps} />
-        {/* <Tab props={TabProps} /> */}
-        {/* <SecondaryHeading props={SecondaryHeadingProps} /> */}
-        {/* <Faq props={faqProps} /> */}
-
-        <CookieBanner />
-
-        {/* <CallToActionImage props={CallToActionImageProps} />
-        
-
-        <ContentFour />
-        <CallToAction props={CallToActionProps} />
-        <ContentOne props={ContentOneProps} />
+        <Navbar props={NavbarProps} />
+        <SecondaryHeading props={SecondaryHeadingProps} />
         <ContentThree props={ContentThreeProps} />
+        <CallToAction props={CallToActionProps} />
+        <Tab props={TabProps} />
+        <Faq props={faqProps} />
         <ContentTwo props={ContentTwoProps} />
-
-        <CallToAction props={CallToActionProps} /> */}
         <LeafletMap />
+        <CookieBanner />
+        {/* <CallToActionImage props={CallToActionImageProps} />
+        <MasonryGallery props={MasonryGalleryProps} />
+
+        <ContentFour />
+        
+        <ContentOne props={ContentOneProps} />
+        
+        <ContentTwo props={ContentTwoProps} /> */}
         <Footer />
       </motion.div>
     </>

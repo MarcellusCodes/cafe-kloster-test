@@ -1,29 +1,52 @@
 import { motion } from "framer-motion";
+import Lottie from "lottie-react";
+import coffeeAnimation from "./coffeeAnimation4.json";
 
 const LoadingScreen = () => {
   return (
     <motion.div
-      initial="collapsed"
-      animate="open"
-      variants={{
-        collapsed: { opacity: 1, height: "100%" },
-        open: { opacity: 0, height: 0 },
-      }}
-      transition={{
-        duration: 1,
-        delay: 2,
-        ease: [0.65, 0.05, 0.36, 1],
-      }}
-      className="z-50"
+      initial={{ y: 0, x: 0, scaleY: 1 }}
+      animate={{ y: 0, x: 0, scaleY: 0, transformOrigin: "top" }}
+      transition={{ duration: 1, delay: 2.5, ease: [0.87, 0, 0.13, 1] }}
+      className="z-50 h-screen w-full bg-primary-900"
       style={{
-        backgroundColor: "red",
-        width: "100%",
-        height: "100%",
-        position: "absolute",
-        top: 0,
-        left: 0,
+        position: "fixed",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: "1rem",
       }}
-    ></motion.div>
+    >
+      <motion.h2
+        initial={{
+          opacity: 1,
+          y: 0,
+        }}
+        animate={{
+          opacity: [1, 0.5, 0],
+          y: 150,
+        }}
+        transition={{ delay: 2.3, duration: 1, ease: "easeInOut" }}
+        className="font-heading text-5xl font-bold text-tertiary-300"
+      >
+        Café Kloster
+      </motion.h2>
+      <motion.div
+        style={{ width: "250px", height: "250px" }}
+        initial={{
+          opacity: 1,
+          y: 0,
+        }}
+        animate={{
+          opacity: [1, 0.5, 0],
+          y: -150,
+        }}
+        transition={{ delay: 2.3, duration: 1, ease: "easeInOut" }}
+      >
+        <Lottie animationData={coffeeAnimation} loop={true} />
+      </motion.div>
+    </motion.div>
   );
 };
 

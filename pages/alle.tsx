@@ -550,14 +550,13 @@ export default function Home() {
         <ContentFour />
         <MasonryGallery props={MasonryGalleryProps} />
         <MarqueeReview props={marqueeReviewProps} />
-        {/* <Tab props={TabProps} /> */}
-        {/* <SecondaryHeading props={SecondaryHeadingProps} /> */}
-        {/* <Faq props={faqProps} /> */}
+        <Tab props={TabProps} />
+        <SecondaryHeading props={SecondaryHeadingProps} />
+        <Faq props={faqProps} />
 
         <CookieBanner />
 
-        {/* <CallToActionImage props={CallToActionImageProps} />
-        
+        <CallToActionImage props={CallToActionImageProps} />
 
         <ContentFour />
         <CallToAction props={CallToActionProps} />
@@ -565,7 +564,7 @@ export default function Home() {
         <ContentThree props={ContentThreeProps} />
         <ContentTwo props={ContentTwoProps} />
 
-        <CallToAction props={CallToActionProps} /> */}
+        <CallToAction props={CallToActionProps} />
         <LeafletMap />
         <Footer />
       </motion.div>

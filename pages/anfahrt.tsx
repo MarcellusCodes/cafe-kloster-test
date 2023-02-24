@@ -530,13 +530,13 @@ const TabProps = {
 
 const SecondaryHeadingProps = {
   id: "test",
-  title: "Öffnungszeiten",
-  caption: "Lorem ipsum dolor sit amet consectetur.",
+  title: "Anfahrt",
+  caption: "So finden sie Ihren Weg zu uns",
   image: { src: "/cta-bg-2.jpg", alt: "test" },
   theme: "dark",
 };
 
-export default function Home() {
+export default function Anfahrt() {
   const { SignInModal, setShowSignInModal } = useSignInModal();
   return (
     <>
@@ -544,29 +544,28 @@ export default function Home() {
         <LoadingScreen />
         {/* <TertiaryHeading /> */}
         <Alert props={alertProps} />
-        <Header props={headerProps} />
-        <CtaGallery props={CtaGalleryProps} />
-        <MarqueeText props={marqueeTextProps} />
-        <ContentFour />
-        <MasonryGallery props={MasonryGalleryProps} />
+        <Navbar props={NavbarProps} />
+        <SecondaryHeading props={SecondaryHeadingProps} />
+        <ContentOne props={ContentOneProps} />
+
         <MarqueeReview props={marqueeReviewProps} />
+        {/* <ContentThree props={ContentThreeProps} /> */}
+        <LeafletMap />
         {/* <Tab props={TabProps} /> */}
-        {/* <SecondaryHeading props={SecondaryHeadingProps} /> */}
-        {/* <Faq props={faqProps} /> */}
 
         <CookieBanner />
 
         {/* <CallToActionImage props={CallToActionImageProps} />
-        
+        <MasonryGallery props={MasonryGalleryProps} />
 
         <ContentFour />
         <CallToAction props={CallToActionProps} />
         <ContentOne props={ContentOneProps} />
-        <ContentThree props={ContentThreeProps} />
+        
         <ContentTwo props={ContentTwoProps} />
 
         <CallToAction props={CallToActionProps} /> */}
-        <LeafletMap />
+
         <Footer />
       </motion.div>
     </>

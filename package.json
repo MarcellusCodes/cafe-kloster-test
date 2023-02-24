@@ -28,6 +28,7 @@
     "focus-trap-react": "^10.0.2",
     "framer-motion": "^9.0.4",
     "leaflet": "^1.9.3",
+    "lottie-react": "^2.4.0",
     "lucide-react": "0.105.0-alpha.4",
     "ms": "^2.1.3",
     "next": "13.1.1",
