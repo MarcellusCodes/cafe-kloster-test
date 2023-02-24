@@ -8,7 +8,7 @@ const LoadingScreen = () => {
       initial={{ y: 0, x: 0, scaleY: 1 }}
       animate={{ y: 0, x: 0, scaleY: 0, transformOrigin: "top" }}
       transition={{ duration: 1, delay: 2.5, ease: [0.87, 0, 0.13, 1] }}
-      className="z-50 h-screen w-full bg-primary-900"
+      className="z-[100] h-screen w-full bg-primary-900"
       style={{
         position: "fixed",
         display: "flex",
