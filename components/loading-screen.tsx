@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Lottie from "lottie-react";
-//import coffeeAnimation from "./coffeeAnimation4.json";
+import coffeeAnimation from "./coffeeAnimation4.json";
 
 const LoadingScreen = () => {
   return (
@@ -32,7 +32,7 @@ const LoadingScreen = () => {
       >
         Café Kloster
       </motion.h2>
-      {/* <motion.div
+      <motion.div
         style={{ width: "250px", height: "250px" }}
         initial={{
           opacity: 1,
@@ -45,7 +45,7 @@ const LoadingScreen = () => {
         transition={{ delay: 2.3, duration: 1, ease: "easeInOut" }}
       >
         <Lottie animationData={coffeeAnimation} loop={true} />
-      </motion.div> */}
+      </motion.div>
     </motion.div>
   );
 };
