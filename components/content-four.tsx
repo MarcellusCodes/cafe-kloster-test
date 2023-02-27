@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper";
 import { motion } from "framer-motion";
 import CountingNumbers from "./shared/counting-numbers";
+import CountUp from "react-countup";
 
 type TContentFour = {
   id: string;
@@ -71,7 +72,12 @@ const ContentFour = () => {
           <ul className="flex shrink-0 flex-row flex-wrap items-start  gap-3">
             <li className="flex flex-col items-start gap-1 font-heading text-xl text-primary-900 text-opacity-80">
               <span className=" flex flex-row items-center font-heading text-4xl text-primary-900">
-                <CountingNumbers value={10000} />
+                <CountUp
+                  end={10000}
+                  enableScrollSpy={true}
+                  scrollSpyOnce={true}
+                  duration={0.8}
+                />
                 <motion.svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -84,7 +90,12 @@ const ContentFour = () => {
             </li>
             <li className="flex flex-col items-start gap-1 font-heading text-xl text-primary-900 text-opacity-80">
               <span className=" flex flex-row items-center font-heading text-4xl text-primary-900">
-                <CountingNumbers value={5000} />
+                <CountUp
+                  end={5000}
+                  enableScrollSpy={true}
+                  scrollSpyOnce={true}
+                  duration={0.8}
+                />
                 <motion.svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -97,7 +108,12 @@ const ContentFour = () => {
             </li>
             <li className="flex flex-col items-start gap-1 font-heading text-xl text-primary-900 text-opacity-80">
               <span className=" flex flex-row items-center font-heading text-4xl text-primary-900">
-                <CountingNumbers value={15000} />
+                <CountUp
+                  end={15000}
+                  enableScrollSpy={true}
+                  scrollSpyOnce={true}
+                  duration={0.8}
+                />
                 <motion.svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
