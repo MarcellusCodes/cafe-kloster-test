@@ -20,6 +20,7 @@ import {
   ContentFour,
   Tab,
   SecondaryHeading,
+  ContentFive,
 } from "@/components/index";
 import { useSignInModal } from "../components/layout/sign-in-modal";
 import { useState, Suspense } from "react";
@@ -542,6 +543,7 @@ export default function Home() {
     <>
       <motion.div className="relative overflow-x-hidden">
         <LoadingScreen />
+        <ContentFive />
         {/* <TertiaryHeading /> */}
         <Alert props={alertProps} />
         <Navbar props={NavbarProps} />
