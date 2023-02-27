@@ -8,15 +8,7 @@ const LoadingScreen = () => {
       initial={{ y: 0, x: 0, scaleY: 1 }}
       animate={{ y: 0, x: 0, scaleY: 0, transformOrigin: "top" }}
       transition={{ duration: 1, delay: 2.5, ease: [0.87, 0, 0.13, 1] }}
-      className="z-[100] h-screen w-full bg-primary-900"
-      style={{
-        position: "fixed",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        gap: "1rem",
-      }}
+      className="fixed z-[100] flex h-screen w-full flex-col items-center justify-center gap-4 bg-primary-900"
     >
       <motion.h2
         initial={{

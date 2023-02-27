@@ -35,7 +35,7 @@ const ContentOne = ({ props }: { props: TContentOne }) => {
   });
 
   return (
-    <div ref={containerRef} className="relative overflow-hidden">
+    <div className="relative overflow-hidden">
       <Section className="h-full bg-secondary-50">
         <Container className="flex h-full flex-col items-start justify-evenly gap-12 lg:flex-row">
           <div className="relative flex w-full flex-col gap-6 lg:w-1/2">
@@ -54,8 +54,10 @@ const ContentOne = ({ props }: { props: TContentOne }) => {
             <p className="max-w-2xl font-title text-4xl text-primary-900 sm:text-6xl ">
               {props.caption}
             </p>
-
-            <div className=" group relative mt-12 grid h-[600px] w-full grid-cols-12 grid-rows-12 gap-1">
+            <div
+              ref={containerRef}
+              className=" group relative mt-12 grid h-[600px] w-full grid-cols-12 grid-rows-12 gap-1 overflow-hidden"
+            >
               {props.images.map((image, index) => (
                 <ContentImages
                   key={image.id}

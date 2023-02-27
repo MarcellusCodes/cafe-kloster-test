@@ -30,8 +30,8 @@ const Header = ({ props }: { props: THeader }) => {
         <path d="M24.2 74.7c.4 2.1 3.3 2.5 3.3.3 0-.8-.8-1.6-1.8-1.8-1.4-.3-1.8.1-1.5 1.5zM27 82.1C27 84.5 38.1 96 40.4 96c3.5 0 2.3-2.4-4.4-9-3.9-3.8-7.5-7-8-7-.6 0-1 .9-1 2.1z" />
       </svg>
 
-      <div className="container mx-auto flex flex-col items-start justify-between py-10 sm:py-20 lg:flex-row">
-        <div className="flex flex-col items-start">
+      <div className="container mx-auto flex flex-col items-start justify-between py-10 sm:py-20 lg:flex-row lg:items-center">
+        <div className="flex flex-col items-start ">
           <h1 className="mb-6 w-full font-heading text-4xl font-bold text-white sm:text-6xl">
             <Balancer>{props.title}</Balancer>
           </h1>
@@ -47,7 +47,7 @@ const Header = ({ props }: { props: THeader }) => {
             </Link>
             <Link
               href={props.cta.secondary.link}
-              className="flex flex-row items-center gap-2 rounded-sm border border-gray-300 py-2 px-5  font-heading text-lg text-white hover:bg-gray-300 hover:bg-opacity-25 sm:py-3 sm:px-6 sm:text-xl"
+              className="flex flex-row items-center gap-2 rounded-sm border border-gray-300 py-2 px-5 font-heading text-lg text-white hover:bg-gray-300 hover:bg-opacity-25 sm:py-3 sm:px-6 sm:text-xl"
             >
               <span>{props.cta.secondary.title}</span>{" "}
               <svg

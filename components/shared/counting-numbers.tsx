@@ -14,7 +14,7 @@ export default function CountingNumbers({
 }) {
   const [count, setCount] = useState(start);
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref);
 
   useEffect(() => {
     let startTime: number | undefined;
