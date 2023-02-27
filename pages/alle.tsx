@@ -544,6 +544,7 @@ export default function Home() {
         <LoadingScreen />
         {/* <TertiaryHeading /> */}
         <Alert props={alertProps} />
+        <Navbar props={NavbarProps} />
         <Header props={headerProps} />
         <CtaGallery props={CtaGalleryProps} />
         <MarqueeText props={marqueeTextProps} />
@@ -558,7 +559,6 @@ export default function Home() {
 
         <CallToActionImage props={CallToActionImageProps} />
 
-        <ContentFour />
         <CallToAction props={CallToActionProps} />
         <ContentOne props={ContentOneProps} />
         <ContentThree props={ContentThreeProps} />
