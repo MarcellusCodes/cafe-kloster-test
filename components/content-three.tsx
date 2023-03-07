@@ -35,9 +35,6 @@ const imageGrid = [
 ];
 
 const ContentThree = ({ props }: { props: TContentThree }) => {
-  const listRef = useRef(null);
-  const isInView = useInView(listRef, { once: true });
-
   return (
     <Section className="h-full bg-secondary-50">
       <Container className="flex h-full flex-col items-start gap-12 lg:flex-row">
@@ -69,25 +66,24 @@ const ContentThree = ({ props }: { props: TContentThree }) => {
             {props.text}
           </p>
           <motion.ul
-            ref={listRef}
             variants={{
-              visible: {
+              animate: {
                 transition: {
-                  staggerChildren: 0.3,
-                  delayChildren: 0.3,
+                  staggerChildren: 0.1,
                 },
               },
             }}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ margin: "0px 0px -300px 0px" }}
             className="z-10 mb-3 flex flex-col items-start gap-3"
           >
             {props.list.map((item) => (
               <motion.li
                 key={item.id}
                 variants={{
-                  hidden: { opacity: 0 },
-                  visible: { opacity: 1 },
+                  initial: { opacity: 0, y: -25 },
+                  animate: { opacity: 1, y: 0 },
                 }}
                 transition={{ duration: 0.6, ease: [0.87, 0, 0.13, 1] }}
                 className="flex flex-row items-center gap-2 font-heading text-lg text-primary-900"

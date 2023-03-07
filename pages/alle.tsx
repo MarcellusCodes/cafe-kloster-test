@@ -543,6 +543,36 @@ const SecondaryHeadingProps = {
   theme: "dark",
 };
 
+const ContentFiveProps = {
+  id: "test",
+  title: "Features",
+  caption: "Unsere Vorteile auf einen Blick",
+  text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
+  cta_title: "Jetzt Termin vereinbaren",
+  cta_link: "/",
+  image: { src: "/header-preview-2.jpg", alt: "test" },
+  features: [
+    {
+      id: "test",
+      title: "WLAN kostenlos",
+      caption:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, temporibus.",
+    },
+    {
+      id: "test2",
+      title: "Außenbereich mit Spielplatz",
+      caption:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, temporibus.",
+    },
+    {
+      id: "test",
+      title: "Große Vielfalt an Getränken",
+      caption:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, temporibus.",
+    },
+  ],
+};
+
 export default function Home() {
   const { SignInModal, setShowSignInModal } = useSignInModal();
   return (
@@ -552,7 +582,7 @@ export default function Home() {
         <Alert props={alertProps} />
         <Navbar props={NavbarProps} />
         <Header props={headerProps} />
-        <ContentFive />
+        <ContentFive props={ContentFiveProps} />
         {/* <TertiaryHeading /> */}
         <CtaGallery props={CtaGalleryProps} />
         <MarqueeText props={marqueeTextProps} />

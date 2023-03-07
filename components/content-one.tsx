@@ -32,6 +32,7 @@ const ContentOne = ({ props }: { props: TContentOne }) => {
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["center center", "start end"],
+    
   });
 
   return (
