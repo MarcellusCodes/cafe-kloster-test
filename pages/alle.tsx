@@ -337,15 +337,21 @@ const ContentThreeProps = {
 const faqProps = {
   id: "test",
   title: "Häufig gestellte Fragen",
-  caption: "FAQ",
+  caption:
+    "Brauchst du eine kleine Kaffeepause von all deinen Fragen? Schau doch mal in unserem FAQ vorbei!",
   image: {
     alt: "alt",
     src: "/cta-bg.jpg",
   },
   faqs: [
-    { id: "string", question: "string", answer: "string" },
-    { id: "string", question: "string", answer: "string" },
-    { id: "string", question: "string", answer: "string" },
+    { id: "string", question: "Kaffee Sorten", answer: "string" },
+    { id: "string", question: "Sitzplätze", answer: "string" },
+    { id: "string", question: "Reservierung", answer: "string" },
+    { id: "string", question: "Anfahrt", answer: "string" },
+    { id: "string", question: "Bestellen", answer: "string" },
+    { id: "string", question: "Veranstaltungen", answer: "string" },
+    { id: "string", question: "Mittagstich", answer: "string" },
+    { id: "string", question: "Für die Kinder", answer: "string" },
   ],
   theme: "dark",
 };
@@ -365,7 +371,7 @@ const marqueeReviewProps = {
   id: "test",
   title: "Was unsere Kunden sagen",
   caption: "Reviews",
-  text: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+  text: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
   cta_title: "Mehr Bewertungen",
   cta_link: "/",
   reviews: [
@@ -543,11 +549,11 @@ export default function Home() {
     <>
       <motion.div className="relative overflow-x-hidden">
         <LoadingScreen />
-        <ContentFive />
-        {/* <TertiaryHeading /> */}
         <Alert props={alertProps} />
         <Navbar props={NavbarProps} />
         <Header props={headerProps} />
+        <ContentFive />
+        {/* <TertiaryHeading /> */}
         <CtaGallery props={CtaGalleryProps} />
         <MarqueeText props={marqueeTextProps} />
         <ContentFour />

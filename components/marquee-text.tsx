@@ -18,7 +18,9 @@ const MarqueeText = ({ props }: { props: TMarqueeText }) => {
       <p
         className={`py-6 font-heading text-4xl ${
           props.theme === "light" && "text-primary-900"
-        } ${props.theme === "dark" && "text-tertiary-300"} sm:text-6xl`}
+        } ${
+          props.theme === "dark" && "text-tertiary-300"
+        } text-3xl sm:text-5xl`}
       >
         {props.text}
       </p>

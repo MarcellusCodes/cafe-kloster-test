@@ -36,7 +36,7 @@ const ContentFive = () => {
           </div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-1/3 w-1/3 fill-current stroke-gray-400/80 text-gray-300 text-opacity-80"
+            className="h-1/3 w-1/3  stroke-1 fill-current stroke-gray-400/80 text-gray-300 text-opacity-80"
             viewBox="0 0 128 128"
           >
             <path d="M26.6 13.1c-6.4 1.5-10.3 4.5-12 9.2-2.4 6.7-2.7 11.1-1.6 18.3 3 19 15.9 31.5 31.9 31.3 9-.1 16.2-3.7 20.5-10.2 6.1-9.5 1.6-24.9-10.9-37.1-9.6-9.5-19.4-13.6-27.9-11.5zM40.8 18c7.8 4 17.4 14.1 21.5 22.7 5.4 11.7 3.5 20.6-5.4 25.1-4.3 2.1-4.7 2.1-9.6.7C34.7 62.7 19 40.1 19 25.6c0-5.9.8-7.1 6.7-9.2 5.7-2 8.4-1.7 15.1 1.6zM18.4 37.2C23 49.5 31.2 60.4 39.9 66.1c4.9 3.1 3.4 3.9-3 1.7-8.7-2.9-16-10.6-19.2-20-1.6-4.6-3.5-18.8-2.4-17.8.3.3 1.7 3.5 3.1 7.2z" />
@@ -46,12 +46,12 @@ const ContentFive = () => {
         </div>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
           <div className="flex flex-row items-start gap-3">
-            <div className="rounded-sm border-2 border-gray-300 border-opacity-80 bg-gray-100/80 p-4 ">
+            <div className="rounded-sm border-2 border-primary-900 bg-tertiary-400 p-4 ">
               <motion.svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 507.506 507.506"
                 xmlSpace="preserve"
-                className="h-8 w-8 shrink-0 fill-current font-bold text-tertiary-300 "
+                className="h-8 w-8 shrink-0 fill-current font-bold text-white "
               >
                 <motion.path d="M163.865 436.934a54.228 54.228 0 0 1-38.4-15.915L9.369 304.966c-12.492-12.496-12.492-32.752 0-45.248 12.496-12.492 32.752-12.492 45.248 0l109.248 109.248L452.889 79.942c12.496-12.492 32.752-12.492 45.248 0 12.492 12.496 12.492 32.752 0 45.248L202.265 421.019a54.228 54.228 0 0 1-38.4 15.915z" />
               </motion.svg>
@@ -67,19 +67,26 @@ const ContentFive = () => {
             </div>
           </div>
           <div className="flex flex-row items-start gap-3">
-            <div className="rounded-sm border-2 border-gray-300 border-opacity-80 bg-gray-100/80 p-4 ">
+            <motion.div className="rounded-sm border-2 border-primary-900 bg-tertiary-400 p-4">
               <motion.svg
+                transition={{
+                  ease: "easeOut",
+                  delay: 5,
+                  duration: 0.6,
+                }}
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 507.506 507.506"
                 xmlSpace="preserve"
-                className="h-8 w-8 shrink-0 fill-current font-bold text-tertiary-300 "
+                className="h-8 w-8 shrink-0 fill-current font-bold text-white"
               >
                 <motion.path d="M163.865 436.934a54.228 54.228 0 0 1-38.4-15.915L9.369 304.966c-12.492-12.496-12.492-32.752 0-45.248 12.496-12.492 32.752-12.492 45.248 0l109.248 109.248L452.889 79.942c12.496-12.492 32.752-12.492 45.248 0 12.492 12.496 12.492 32.752 0 45.248L202.265 421.019a54.228 54.228 0 0 1-38.4 15.915z" />
               </motion.svg>
-            </div>
+            </motion.div>
             <div className="flex flex-col gap-3">
               <h3 className="font-heading text-3xl font-bold text-primary-900">
-                Kostenloses W-Lan
+                WC im Haus
               </h3>
               <p className="z-10 max-w-2xl font-text text-xl text-primary-900 text-opacity-80">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
@@ -88,19 +95,19 @@ const ContentFive = () => {
             </div>
           </div>
           <div className="flex flex-row items-start gap-3">
-            <div className="rounded-sm border-2 border-gray-300 border-opacity-80 bg-gray-100/80 p-4 ">
+            <div className="rounded-sm border-2 border-primary-900 bg-tertiary-400 p-4 ">
               <motion.svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 507.506 507.506"
                 xmlSpace="preserve"
-                className="h-8 w-8 shrink-0 fill-current font-bold text-tertiary-300 "
+                className="h-8 w-8 shrink-0 fill-current font-bold text-white "
               >
                 <motion.path d="M163.865 436.934a54.228 54.228 0 0 1-38.4-15.915L9.369 304.966c-12.492-12.496-12.492-32.752 0-45.248 12.496-12.492 32.752-12.492 45.248 0l109.248 109.248L452.889 79.942c12.496-12.492 32.752-12.492 45.248 0 12.492 12.496 12.492 32.752 0 45.248L202.265 421.019a54.228 54.228 0 0 1-38.4 15.915z" />
               </motion.svg>
             </div>
             <div className="flex flex-col gap-3">
               <h3 className="font-heading text-3xl font-bold text-primary-900">
-                Kostenloses W-Lan
+                Gartenanlage mit Spielplatz
               </h3>
               <p className="z-10 max-w-2xl font-text text-xl text-primary-900 text-opacity-80">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
