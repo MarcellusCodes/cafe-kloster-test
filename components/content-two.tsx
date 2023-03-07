@@ -1,4 +1,5 @@
 import { Section, Container } from "@/components/index";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 type TContentTwo = {
@@ -32,15 +33,65 @@ const ContentTwo = ({ props }: { props: TContentTwo }) => {
               index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"
             }`}
           >
-            <div className="mt-6 grid h-[400px] w-full place-items-center rounded-sm border-2 border-gray-300 border-opacity-10 bg-primary-900 bg-opacity-80 bg-[url('/content-2-pattern.svg')]  bg-no-repeat md:h-[700px] lg:mt-0 lg:w-1/2">
-              <div className="relative h-[80%] w-[80%]">
+            <div className="relative mt-6 grid h-[400px] w-full place-items-center rounded-sm border-gray-300 border-opacity-10 bg-primary-900 bg-opacity-80 bg-[url('/content-2-pattern.svg')]  bg-no-repeat md:h-[700px] lg:mt-0 lg:w-1/2">
+              <motion.div
+                initial={{ scaleY: 0 }}
+                whileInView={{ scaleY: 1, transformOrigin: "bottom" }}
+                viewport={{ once: true, margin: "0px 0px -300px 0px" }}
+                transition={{
+                  ease: [0.87, 0, 0.13, 1],
+                  duration: 1,
+                  delay: 0.9,
+                }}
+                className="absolute top-0 left-0 z-20 h-full border-l-2 border-gray-300 border-opacity-10 "
+              ></motion.div>
+              <motion.div
+                initial={{ scaleY: 0 }}
+                whileInView={{ scaleY: 1, transformOrigin: "top" }}
+                viewport={{ once: true, margin: "0px 0px -300px 0px" }}
+                transition={{
+                  ease: [0.87, 0, 0.13, 1],
+                  duration: 1,
+                  delay: 0.3,
+                }}
+                className="absolute top-0 right-0 z-20 h-full border-r-2 border-gray-300 border-opacity-10"
+              ></motion.div>
+              <motion.div
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1, transformOrigin: "left" }}
+                viewport={{ once: true, margin: "0px 0px -300px 0px" }}
+                transition={{ ease: [0.87, 0, 0.13, 1], duration: 1 }}
+                className="absolute top-0 left-0 z-20 w-full  border-t-2 border-gray-300 border-opacity-10"
+              ></motion.div>
+              <motion.div
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1, transformOrigin: "right" }}
+                viewport={{ once: true, margin: "0px 0px -300px 0px" }}
+                transition={{
+                  ease: [0.87, 0, 0.13, 1],
+                  duration: 1,
+                  delay: 0.6,
+                }}
+                className="absolute bottom-0 left-0 z-20 w-full border-b-2 border-gray-300 border-opacity-10"
+              ></motion.div>
+              <motion.div
+                initial={{
+                  clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
+                }}
+                whileInView={{
+                  clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+                }}
+                transition={{ ease: [0.87, 0, 0.13, 1], duration: 1 }}
+                viewport={{ once: false, margin: "0px 0px -300px 0px" }}
+                className="relative h-[80%] w-[80%]"
+              >
                 <Image
                   alt={box.alt}
                   src={box.src}
                   fill={true}
                   className="rounded-xs object-cover"
                 />
-              </div>
+              </motion.div>
             </div>
             <div className="relative flex h-full w-full flex-col items-start gap-6 p-4 lg:w-auto">
               <svg
