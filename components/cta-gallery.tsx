@@ -8,7 +8,15 @@ import Balancer from "react-wrap-balancer";
 import { PrimaryLink, Section } from "@/components/index";
 import * as ScrollArea from "@radix-ui/react-scroll-area";
 
-const Slide = ({ isActive, props }: { isActive: boolean; props: TSlider }) => {
+const Slide = ({
+  isActive,
+  props,
+  index,
+}: {
+  isActive: boolean;
+  props: TSlider;
+  index: number;
+}) => {
   const [showMore, setShowMore] = useState(true);
   const [showText, setShowText] = useState(false);
 
@@ -19,9 +27,15 @@ const Slide = ({ isActive, props }: { isActive: boolean; props: TSlider }) => {
 
   return (
     <motion.div
-      transition={{ duration: 0.6, ease: [0.86, 0, 0.07, 1] }}
+      transition={{
+        duration: 0.6,
+        ease: [0.86, 0, 0.07, 1],
+        delay: index * 0.1,
+      }}
+      viewport={{ once: true, margin: "0px 0px -300px 0px" }}
       className="flex h-full w-full flex-col items-start rounded-sm border-2 bg-white p-3"
-      initial={{ borderColor: "#feeed6" }}
+      initial={{ borderColor: "#feeed6", x: 100, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
       animate={{
         borderColor: isActive ? "#f9bc78" : "#feeed6",
       }}
@@ -244,10 +258,10 @@ const CtaGallery = ({ props }: { props: TCtaGallery }) => {
               }}
               className="relative z-20 h-full w-full cursor-grab  overflow-auto  rounded-sm active:cursor-grabbing"
             >
-              {props.slides.map((slide) => (
+              {props.slides.map((slide, index) => (
                 <SwiperSlide key={slide.id} className="z-20 h-full w-full">
                   {({ isActive }) => (
-                    <Slide isActive={isActive} props={slide} />
+                    <Slide isActive={isActive} props={slide} index={index} />
                   )}
                 </SwiperSlide>
               ))}

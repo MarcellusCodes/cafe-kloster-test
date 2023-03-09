@@ -24,3 +24,4 @@ export { default as SecondaryHeading } from "./secondary-heading";
 export { default as ContentFour } from "./content-four";
 export { default as Tab } from "./tab";
 export { default as ContentFive } from "./content-five";
+export { default as ContentSix } from "./content-six";

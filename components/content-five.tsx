@@ -44,6 +44,7 @@ const Feature = ({ props }: { props: TFeature }) => {
             initial: { scale: 0 },
             animate: { scale: [0, 1.2, 1] },
           }}
+          viewport={{ once: true }}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 507.506 507.506"
           xmlSpace="preserve"

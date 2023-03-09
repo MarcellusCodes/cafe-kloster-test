@@ -21,6 +21,7 @@ import {
   Tab,
   SecondaryHeading,
   ContentFive,
+  ContentSix,
 } from "@/components/index";
 import { useSignInModal } from "../components/layout/sign-in-modal";
 import { useState, Suspense } from "react";
@@ -583,6 +584,7 @@ export default function Home() {
         <Navbar props={NavbarProps} />
         <Header props={headerProps} />
         <ContentFive props={ContentFiveProps} />
+        <ContentSix />
         {/* <TertiaryHeading /> */}
         <CtaGallery props={CtaGalleryProps} />
         <MarqueeText props={marqueeTextProps} />
@@ -602,7 +604,6 @@ export default function Home() {
         <ContentThree props={ContentThreeProps} />
         <ContentTwo props={ContentTwoProps} />
 
-        <CallToAction props={CallToActionProps} />
         <LeafletMap />
         <Footer />
       </motion.div>

@@ -42,7 +42,7 @@ const Accordion = ({
         <motion.svg
           initial={{ rotate: 0 }}
           animate={{ rotate: isOpen ? 45 : 0 }}
-          transition={{ duration: 0.6, ease: [0.65, 0.05, 0.36, 1] }}
+          transition={{ duration: 0.3, ease: [0.65, 0.05, 0.36, 1] }}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           className="h-10 w-10 fill-current text-tertiary-400"
@@ -123,7 +123,7 @@ const Faq = ({ props }: { props: TFaq }) => {
             initial="initial"
             whileInView="animate"
             variants={{ animate: { transition: { staggerChildren: 0.1 } } }}
-            viewport={{ margin: "0px 0px -300px 0px" }}
+            viewport={{ margin: "0px 0px -300px 0px", once: true }}
             className="flex w-full flex-col gap-4"
           >
             {props.faqs.map((faq, index) => (
