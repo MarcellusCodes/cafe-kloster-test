@@ -22,6 +22,7 @@ import {
   SecondaryHeading,
   ContentFive,
   ContentSix,
+  GalleryOne,
 } from "@/components/index";
 import { useSignInModal } from "../components/layout/sign-in-modal";
 import { useState, Suspense } from "react";
@@ -585,6 +586,7 @@ export default function Home() {
         <Header props={headerProps} />
         <ContentFive props={ContentFiveProps} />
         <ContentSix />
+        <GalleryOne />
         {/* <TertiaryHeading /> */}
         <CtaGallery props={CtaGalleryProps} />
         <MarqueeText props={marqueeTextProps} />

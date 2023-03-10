@@ -24,14 +24,14 @@ const Feature = ({ props }: { props: TFeature }) => {
     <motion.div
       transition={{
         duration: 0.6,
-        ease: [0.87, 0, 0.13, 1],
+        ease: [0.645, 0.045, 0.355, 1],
       }}
       variants={{
         initial: {
-          x: -25,
-          clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)",
+          y: -25,
+          clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
         },
-        animate: { clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", x: 0 },
+        animate: { clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", y: 0 },
       }}
       className="flex flex-row items-start gap-3"
     >
