@@ -39,7 +39,7 @@ const SecondaryHeading = ({ props }: { props: TSecondaryHeading }) => {
     },
   );
 
-  const scaleImage = useTransform(scrollYProgress, [1, 0], [1, 1.2], {
+  const scaleImage = useTransform(scrollYProgress, [1, 0], [1, 1.5], {
     ease: circOut,
   });
 
@@ -84,7 +84,7 @@ const SecondaryHeading = ({ props }: { props: TSecondaryHeading }) => {
           </p>
           <motion.div
             style={{ y: transformYImage, scale: scaleImage }}
-            className="scrollbar-hide relative mt-12 inline-block h-[300px] w-full lg:h-[500px]"
+            className="scrollbar-hide relative inline-block h-[300px] w-full sm:mt-12 lg:h-[500px]"
           >
             <Image
               alt={props.image.alt}

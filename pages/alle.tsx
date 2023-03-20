@@ -23,6 +23,7 @@ import {
   ContentFive,
   ContentSix,
   GalleryOne,
+  Video,
 } from "@/components/index";
 import { useSignInModal } from "../components/layout/sign-in-modal";
 import { useState, Suspense } from "react";
@@ -575,6 +576,12 @@ const ContentFiveProps = {
   ],
 };
 
+const VideoProps = {
+  id: "test",
+  src: "/intro.mp4",
+  theme: "dark",
+};
+
 export default function Home() {
   const { SignInModal, setShowSignInModal } = useSignInModal();
   return (
@@ -585,6 +592,7 @@ export default function Home() {
         <Navbar props={NavbarProps} />
         <Header props={headerProps} />
         <ContentFive props={ContentFiveProps} />
+        <Video props={VideoProps} />
         <ContentSix />
         <GalleryOne />
         {/* <TertiaryHeading /> */}

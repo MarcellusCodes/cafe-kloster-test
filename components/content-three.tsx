@@ -75,7 +75,7 @@ const ContentThree = ({ props }: { props: TContentThree }) => {
             }}
             initial="initial"
             whileInView="animate"
-            viewport={{ margin: "0px 0px -300px 0px" }}
+            viewport={{ margin: "0px 0px -300px 0px", once: true }}
             className="z-10 mb-3 flex flex-col items-start gap-3"
           >
             {props.list.map((item) => (

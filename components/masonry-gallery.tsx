@@ -55,7 +55,7 @@ const MasonryGallery = ({ props }: { props: TMasonryGallery }) => {
                   fill={true}
                   className="rounded-sm object-cover duration-300 group-hover:scale-110  group-active:scale-110"
                 />
-                <figcaption className="absolute top-1/2 left-1/2 z-20 -translate-x-1/2 -translate-y-0 font-heading text-xl text-secondary-50 opacity-0 transition-all duration-300 group-hover:-translate-y-1/2 group-hover:opacity-100 group-active:-translate-y-1/2 group-active:opacity-100">
+                <figcaption className="absolute top-1/2 left-1/2 z-20 -translate-x-1/2 -translate-y-0 rotate-6 font-heading text-xl text-secondary-50 opacity-0 transition-all duration-300 group-hover:-translate-y-1/2 group-hover:rotate-0 group-hover:opacity-100 group-active:-translate-y-1/2 group-active:opacity-100">
                   {image.caption}
                 </figcaption>
               </motion.figure>

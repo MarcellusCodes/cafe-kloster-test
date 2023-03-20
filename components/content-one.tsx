@@ -32,7 +32,6 @@ const ContentOne = ({ props }: { props: TContentOne }) => {
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["center center", "start end"],
-    
   });
 
   return (
@@ -57,7 +56,7 @@ const ContentOne = ({ props }: { props: TContentOne }) => {
             </p>
             <div
               ref={containerRef}
-              className=" group relative mt-12 grid h-[600px] w-full grid-cols-12 grid-rows-12 gap-1 overflow-hidden"
+              className=" group relative mt-12 grid h-[600px] w-full grid-cols-12 grid-rows-12 gap-1"
             >
               {props.images.map((image, index) => (
                 <ContentImages
@@ -129,6 +128,7 @@ const ContentImages = ({ key, grid, alt, src, scrollYProgress }) => {
   return (
     <motion.div
       style={{ y: transformYImage, x: transformXImage }}
+      whileHover={{ scale: 1.1 }}
       key={key}
       className={`relative ${grid}  rounded-sm outline outline-4  outline-offset-8  outline-transparent duration-300 ease-out hover:z-50 hover:scale-[1.1!important] hover:outline-tertiary-300 active:z-50 active:scale-[1.1!important] active:outline-tertiary-300`}
     >

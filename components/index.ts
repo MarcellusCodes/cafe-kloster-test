@@ -26,3 +26,4 @@ export { default as Tab } from "./tab";
 export { default as ContentFive } from "./content-five";
 export { default as ContentSix } from "./content-six";
 export { default as GalleryOne } from "./gallery-one";
+export { default as Video } from "./video";
