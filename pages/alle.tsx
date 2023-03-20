@@ -24,6 +24,7 @@ import {
   ContentSix,
   GalleryOne,
   Video,
+  GalleryTwo,
 } from "@/components/index";
 import { useSignInModal } from "../components/layout/sign-in-modal";
 import { useState, Suspense } from "react";
@@ -593,6 +594,7 @@ export default function Home() {
         <Header props={headerProps} />
         <ContentFive props={ContentFiveProps} />
         <Video props={VideoProps} />
+        <GalleryTwo />
         <ContentSix />
         <GalleryOne />
         {/* <TertiaryHeading /> */}

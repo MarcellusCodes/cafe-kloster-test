@@ -2,6 +2,7 @@ import { Section, Container } from "@/components/index";
 import {
   circOut,
   cubicBezier,
+  easeInOut,
   motion,
   useAnimationControls,
   useInView,
@@ -22,19 +23,19 @@ const Video = ({ props }: { props: TVideo }) => {
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["center center", "start end"],
+    offset: ["end center", "center end"],
   });
 
   const scale = useTransform(scrollYProgress, [1, 0], [1, 1.5], {
-    ease: circOut,
+    ease: easeInOut,
   });
 
   const clipPath = useTransform(
     scrollYProgress,
     [1, 0],
-    ["circle(0% at 50% 50%)", "circle(70.7% at 50% 50%)"],
+    ["circle(2.5% at 50% 50%)", "circle(70.7% at 50% 50%)"],
     {
-      ease: circOut,
+      ease: easeInOut,
     },
   );
 
@@ -49,7 +50,7 @@ const Video = ({ props }: { props: TVideo }) => {
           <motion.video
             transition={{
               duration: 0.3,
-              ease: cubicBezier(0.22, 0.61, 0.36, 1),
+              ease: cubicBezier(0.87, 0, 0.13, 1),
             }}
             style={{ scale, clipPath }}
             playsInline
