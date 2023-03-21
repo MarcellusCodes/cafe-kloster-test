@@ -15,7 +15,7 @@ const GalleryOne = () => {
   const test = [0, 1, 2, 3, 4, 5, 6];
 
   return (
-    <Section className="h-full bg-secondary-50">
+    <Section className=" h-full bg-secondary-50">
       <Container className=" flex h-full flex-col items-center justify-evenly gap-12">
         <div className="w-full text-left">
           <h2 className="mb-6 font-text text-xl font-semibold text-tertiary-300">
@@ -26,7 +26,7 @@ const GalleryOne = () => {
           </h3>
         </div>
 
-        <div className="grid w-full grid-cols-1 gap-6 overflow-hidden bg-[url('/video-pattern-light.svg')] bg-repeat sm:grid-cols-2 lg:grid-cols-3 lg:bg-no-repeat xl:grid-cols-4">
+        <div className="grid w-full grid-cols-1 gap-6 bg-secondary-50  bg-[url('/video-pattern-light.svg')] bg-repeat sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {test.map((item, index) => (
             <GalleryImage key={item} index={index} />
           ))}
