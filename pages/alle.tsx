@@ -638,8 +638,8 @@ export default function Home() {
         <ContentFive props={ContentFiveProps} />
         <ContentSix props={ContentSixProps} />
         <GalleryTwo />
-        <MarqueeText props={marqueeTextProps} />
         <GalleryOne />
+        <MarqueeText props={marqueeTextProps} />
         {/* <TertiaryHeading /> */}
         <CtaGallery props={CtaGalleryProps} />
         <MarqueeText props={marqueeTextProps} />
@@ -649,16 +649,12 @@ export default function Home() {
         <Tab props={TabProps} />
         <SecondaryHeading props={SecondaryHeadingProps} />
         <Faq props={faqProps} />
-
         <CookieBanner />
-
         <CallToActionImage props={CallToActionImageProps} />
-
         <CallToAction props={CallToActionProps} />
         <ContentOne props={ContentOneProps} />
         <ContentThree props={ContentThreeProps} />
         <ContentTwo props={ContentTwoProps} />
-
         <LeafletMap />
         <Footer />
       </motion.div>

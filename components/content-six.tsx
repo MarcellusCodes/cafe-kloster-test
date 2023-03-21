@@ -52,7 +52,7 @@ const ContentSix = ({ props }: { props: TContentSix }) => {
           whileInView="animate"
           viewport={{ margin: "0px 0px -300px 0px", once: true }}
           variants={{ animate: { transition: { staggerChildren: 0.1 } } }}
-          className={`z-10 flex  flex-col items-center gap-3 text-center text-left font-heading text-3xl ${
+          className={`z-10 flex  flex-col items-center gap-3 text-left text-center font-heading text-3xl ${
             props.theme === "light" ? "text-primary-900" : "text-white"
           } sm:text-center sm:text-4xl`}
         >

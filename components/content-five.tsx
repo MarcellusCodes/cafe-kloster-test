@@ -19,20 +19,29 @@ type TFeature = {
   caption: string;
 };
 
-const Feature = ({ props }: { props: TFeature }) => {
+const Feature = ({ props, index }: { props: TFeature; index: number }) => {
   return (
     <motion.div
       transition={{
-        duration: 0.6,
-        ease: [0.645, 0.045, 0.355, 1],
+        type: "spring",
+        stiffness: 60,
+        damping: 15,
+        mass: 1,
+        delay: index * 0.1,
       }}
       variants={{
         initial: {
           y: -25,
           clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
         },
-        animate: { clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", y: 0 },
+        animate: {
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+          y: 0,
+        },
       }}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true, margin: "0px 0px -300px 0px" }}
       className="flex flex-row items-start gap-3"
     >
       <motion.div className="rounded-sm border-2 border-primary-900 bg-tertiary-400 p-4">
@@ -118,7 +127,7 @@ const ContentFive = ({ props }: { props: TContentFive }) => {
 
         <div
           ref={containerRef}
-          className="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center z-10"
+          className="z-10 flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center"
         >
           <div className="flex flex-col items-start gap-6">
             <h2 className="font-text text-xl font-semibold text-tertiary-300">
@@ -140,19 +149,7 @@ const ContentFive = ({ props }: { props: TContentFive }) => {
             />
           </motion.div>
         </div>
-        <motion.div
-          variants={{
-            animate: {
-              transition: {
-                staggerChildren: 0.1,
-              },
-            },
-          }}
-          viewport={{ once: true, margin: "0px 0px -300px 0px" }}
-          initial="initial"
-          whileInView="animate"
-          className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3"
-        >
+        <motion.div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
           {props.features.map((feature, index) => (
             <Feature index={index} key={feature.id} props={feature} />
           ))}

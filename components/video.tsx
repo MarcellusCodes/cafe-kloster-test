@@ -8,6 +8,7 @@ import {
   useInView,
   useScroll,
   useTransform,
+  useSpring,
 } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
@@ -39,6 +40,11 @@ const Video = ({ props }: { props: TVideo }) => {
     },
   );
 
+  const springConfig = { stiffness: 60, damping: 15, mass: 1 };
+
+  const clipPathSpring = useSpring(clipPath, springConfig);
+  const clipPathScale = useSpring(scale, springConfig);
+
   return (
     <Section
       className={`overflow-hidden  bg-no-repeat ${
@@ -54,7 +60,7 @@ const Video = ({ props }: { props: TVideo }) => {
               duration: 0.3,
               ease: cubicBezier(0.87, 0, 0.13, 1),
             }}
-            style={{ scale, clipPath }}
+            style={{ scale: clipPathScale, clipPath }}
             playsInline
             autoPlay
             muted
