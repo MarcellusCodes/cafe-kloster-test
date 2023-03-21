@@ -29,7 +29,7 @@ const Alert = ({ props }: { props: TAlert }) => {
           }}
           className="flex w-full flex-row items-center justify-between bg-tertiary-100 p-4"
         >
-          <div className="flex flex-row items-center gap-2">
+          <div className="flex flex-row items-start gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -39,7 +39,7 @@ const Alert = ({ props }: { props: TAlert }) => {
               <path d="M12 5a1 1 0 0 0-1 1v8a1 1 0 0 0 2 0V6a1 1 0 0 0-1-1Z" />
               <rect x={11} y={17} width={2} height={2} rx={1} />
             </svg>
-            <p className=" font-heading text-lg sm:text-xl text-tertiary-600">
+            <p className=" font-heading text-lg text-tertiary-600 sm:text-xl">
               {props.text}
             </p>
           </div>

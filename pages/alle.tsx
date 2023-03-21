@@ -82,8 +82,8 @@ const CtaGalleryProps = {
 };
 
 const MasonryGalleryProps = {
-  title: "Bilder die schmecken",
-  caption: "Gerichte die geknipst sind",
+  title: "Einblick",
+  caption: "In unsere gute Stube",
   images: [
     {
       id: "1",
@@ -262,8 +262,8 @@ const ContentOneProps = {
 
 const ContentTwoProps = {
   id: "test",
-  title: "Sehr neugierig",
-  caption: "Geschichten aus dem Paulaner Garten",
+  title: "Lorem Ipsum",
+  caption: "Lorem Ipsum dolor sit amet.",
   boxes: [
     {
       id: "1",
@@ -374,7 +374,7 @@ const marqueeTextProps = {
 const marqueeReviewProps = {
   id: "test",
   title: "Was unsere Kunden sagen",
-  caption: "Reviews",
+  caption: "Rezensionen",
   text: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
   cta_title: "Mehr Bewertungen",
   cta_link: "/",
@@ -574,13 +574,55 @@ const ContentFiveProps = {
       caption:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, temporibus.",
     },
+    {
+      id: "test",
+      title: "WLAN kostenlos",
+      caption:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, temporibus.",
+    },
+    {
+      id: "test2",
+      title: "Außenbereich mit Spielplatz",
+      caption:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, temporibus.",
+    },
+    {
+      id: "test",
+      title: "Große Vielfalt an Getränken",
+      caption:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, temporibus.",
+    },
+    {
+      id: "test",
+      title: "WLAN kostenlos",
+      caption:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, temporibus.",
+    },
+    {
+      id: "test2",
+      title: "Außenbereich mit Spielplatz",
+      caption:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, temporibus.",
+    },
+    {
+      id: "test",
+      title: "Große Vielfalt an Getränken",
+      caption:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, temporibus.",
+    },
   ],
+};
+
+const ContentSixProps = {
+  id: "test",
+  text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam iure quo, voluptas sed adipisci quas consequatur earum nobis libero blanditiis? Fugit dignissimos maiores voluptate, corporis tenetur ab unde aliquid doloribus?",
+  theme: "dark",
 };
 
 const VideoProps = {
   id: "test",
   src: "/intro.mp4",
-  theme: "dark",
+  theme: "light",
 };
 
 export default function Home() {
@@ -592,10 +634,11 @@ export default function Home() {
         <Alert props={alertProps} />
         <Navbar props={NavbarProps} />
         <Header props={headerProps} />
-        <ContentFive props={ContentFiveProps} />
         <Video props={VideoProps} />
+        <ContentFive props={ContentFiveProps} />
+        <ContentSix props={ContentSixProps} />
         <GalleryTwo />
-        <ContentSix />
+        <MarqueeText props={marqueeTextProps} />
         <GalleryOne />
         {/* <TertiaryHeading /> */}
         <CtaGallery props={CtaGalleryProps} />

@@ -1,5 +1,7 @@
 import Link from "next/link";
 import * as Popover from "@radix-ui/react-popover";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 
 type TNavbar = {
   id: string;
@@ -7,12 +9,16 @@ type TNavbar = {
 };
 
 const Navbar = ({ props }: { props: TNavbar }) => {
+  const [openPhone, setOpenPhone] = useState(false);
+
+  const handleShowPhone = () => {
+    setOpenPhone(!openPhone);
+  };
+
   return (
     <nav
-      className={`w-full border-b-2 border-secondary-200 px-6 ${
-        props.theme === "light"
-          ? "border-secondary-200 border-opacity-80 bg-secondary-50"
-          : "border-gray-300 border-opacity-10 bg-primary-900"
+      className={`w-full  border-secondary-200 px-6 ${
+        props.theme === "light" ? " bg-secondary-50" : " bg-primary-900"
       }`}
     >
       <div className="container mx-auto flex flex-row items-center justify-between py-4">
@@ -39,7 +45,10 @@ const Navbar = ({ props }: { props: TNavbar }) => {
             >
               <Popover.Root>
                 <Popover.Trigger asChild>
-                  <button aria-label="Update dimensions">
+                  <button
+                    aria-label="show phone number"
+                    onClick={handleShowPhone}
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       data-name="Layer 1"
@@ -50,27 +59,49 @@ const Navbar = ({ props }: { props: TNavbar }) => {
                     </svg>
                   </button>
                 </Popover.Trigger>
-                <Popover.Portal>
-                  <Popover.Content
-                    className="data-[state=open]:data-[side=top]:animate-slideDownAndFade data-[state=open]:data-[side=right]:animate-slideLeftAndFade data-[state=open]:data-[side=bottom]:animate-slideUpAndFade data-[state=open]:data-[side=left]:animate-slideRightAndFade w-[260px] rounded-sm border-2 border-gray-300 bg-white p-4 shadow-lg"
-                    sideOffset={5}
-                  >
-                    <span>(0381) 827563</span>
-                    <Popover.Close
-                      className="absolute top-[5px] right-[5px] "
-                      aria-label="Close"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        className="h-6 w-6 shrink-0 fill-current text-primary-900"
+                <AnimatePresence>
+                  {openPhone && (
+                    <Popover.Portal forceMount>
+                      <Popover.Content
+                        className="data-[state=open]:data-[side=top]:animate-slideDownAndFade data-[state=open]:data-[side=right]:animate-slideLeftAndFade data-[state=open]:data-[side=bottom]:animate-slideUpAndFade data-[state=open]:data-[side=left]:animate-slideRightAndFade w-[260px] rounded-sm border-2 border-gray-300 bg-white p-4 shadow-lg"
+                        sideOffset={5}
+                        asChild
                       >
-                        <path d="M18 6a1 1 0 0 0-1.414 0L12 10.586 7.414 6A1 1 0 0 0 6 6a1 1 0 0 0 0 1.414L10.586 12 6 16.586A1 1 0 0 0 6 18a1 1 0 0 0 1.414 0L12 13.414 16.586 18A1 1 0 0 0 18 18a1 1 0 0 0 0-1.414L13.414 12 18 7.414A1 1 0 0 0 18 6Z" />
-                      </svg>
-                    </Popover.Close>
-                    <Popover.Arrow className="fill-white" />
-                  </Popover.Content>
-                </Popover.Portal>
+                        <motion.div
+                          initial="collapsed"
+                          animate="open"
+                          exit="collapsed"
+                          variants={{
+                            open: {
+                              opacity: 1,
+                            },
+                            collapsed: { opacity: 0 },
+                          }}
+                          transition={{
+                            duration: 0.3,
+                            ease: [0.65, 0.05, 0.36, 1],
+                          }}
+                        >
+                          <span>(0381) 827563</span>
+                          <Popover.Close
+                            onClick={handleShowPhone}
+                            className="absolute top-[5px] right-[5px] "
+                            aria-label="Close"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              className="h-6 w-6 shrink-0 fill-current text-primary-900"
+                            >
+                              <path d="M18 6a1 1 0 0 0-1.414 0L12 10.586 7.414 6A1 1 0 0 0 6 6a1 1 0 0 0 0 1.414L10.586 12 6 16.586A1 1 0 0 0 6 18a1 1 0 0 0 1.414 0L12 13.414 16.586 18A1 1 0 0 0 18 18a1 1 0 0 0 0-1.414L13.414 12 18 7.414A1 1 0 0 0 18 6Z" />
+                            </svg>
+                          </Popover.Close>
+                          <Popover.Arrow className="fill-white" />
+                        </motion.div>
+                      </Popover.Content>
+                    </Popover.Portal>
+                  )}
+                </AnimatePresence>
               </Popover.Root>
             </li>
             <li

@@ -26,7 +26,7 @@ const GalleryOne = () => {
           </h3>
         </div>
 
-        <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid w-full grid-cols-1 gap-6 overflow-hidden bg-[url('/video-pattern-light.svg')] bg-repeat sm:grid-cols-2 lg:grid-cols-3 lg:bg-no-repeat xl:grid-cols-4">
           {test.map((item, index) => (
             <GalleryImage key={item} index={index} />
           ))}
@@ -63,7 +63,7 @@ const GalleryImage = ({ index }: { index: number }) => {
         alt="test"
         src="/cta-bg-2.jpg"
         fill={true}
-        className="rounded-sm object-cover bg-blend-screen brightness-[.4] duration-300 group-hover:scale-110 group-hover:brightness-100"
+        className="rounded-sm object-cover bg-blend-screen brightness-[.6] duration-300 group-hover:scale-110 group-hover:brightness-100"
       />
       <motion.figcaption
         variants={{ hover: { y: 25, opacity: 0, rotate: 3 } }}

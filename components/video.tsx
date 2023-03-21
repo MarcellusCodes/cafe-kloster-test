@@ -41,8 +41,10 @@ const Video = ({ props }: { props: TVideo }) => {
 
   return (
     <Section
-      className={`overflow-hidden ${
-        props.theme === "light" ? "bg-secondary-50" : "bg-primary-900"
+      className={`overflow-hidden  bg-no-repeat ${
+        props.theme === "light"
+          ? "bg-secondary-50 bg-[url('/video-pattern-light.svg')]"
+          : "bg-primary-900 bg-[url('/video-pattern-dark.svg')]"
       }`}
     >
       <div ref={containerRef} className="relative">
