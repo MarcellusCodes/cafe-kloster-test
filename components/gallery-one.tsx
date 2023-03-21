@@ -15,7 +15,7 @@ const GalleryOne = () => {
   const test = [0, 1, 2, 3, 4, 5, 6];
 
   return (
-    <Section className=" h-full bg-secondary-50">
+    <Section className="h-full bg-secondary-50">
       <Container className=" flex h-full flex-col items-center justify-evenly gap-12">
         <div className="w-full text-left">
           <h2 className="mb-6 font-text text-xl font-semibold text-tertiary-300">

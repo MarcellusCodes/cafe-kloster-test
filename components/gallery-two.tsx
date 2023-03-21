@@ -31,7 +31,6 @@ const GalleryOne = () => {
             }}
             spaceBetween={24}
             slidesPerView={3}
-            loop={true}
             onSlideChange={() => {
               swiperInstance?.slidePrev();
               swiperInstance2?.slideNext();
@@ -84,7 +83,6 @@ const GalleryOne = () => {
           <Swiper
             slidesPerView={4}
             spaceBetween={24}
-            initialSlide={5}
             loop={true}
             onSwiper={(swiper) => setSwiperInstance(swiper)}
             className="absolute top-0 left-0 h-full w-full"
@@ -173,11 +171,6 @@ const GalleryOne = () => {
         </div>
         <div className="relative h-[200px] w-full lg:h-[300px]">
           <Swiper
-            modules={[Autoplay]}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-            }}
             onSwiper={(swiper) => setSwiperInstance2(swiper)}
             spaceBetween={24}
             slidesPerView={3}
@@ -212,6 +205,14 @@ const GalleryOne = () => {
               <Image
                 alt="test"
                 src="/cta-bg.jpg"
+                fill={true}
+                className="rounded-sm object-cover"
+              />
+            </SwiperSlide>
+            <SwiperSlide className="relative">
+              <Image
+                alt="test"
+                src="/cta-bg-2.jpg"
                 fill={true}
                 className="rounded-sm object-cover"
               />
