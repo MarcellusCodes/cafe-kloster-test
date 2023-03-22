@@ -24,17 +24,23 @@ const Video = ({ props }: { props: TVideo }) => {
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["end center", "center end"],
+    offset: ["center center", "center end"],
   });
 
   const scale = useTransform(scrollYProgress, [1, 0], [1, 1.5], {
     ease: easeInOut,
   });
 
+  const y = useTransform(scrollYProgress, [1, 0], ["-25%", "0%"], {
+    ease: easeInOut,
+  });
+
+  const opacity = useTransform(scrollYProgress, [1, 0], [0, 1]);
+
   const clipPath = useTransform(
     scrollYProgress,
     [1, 0],
-    ["circle(2.5% at 50% 50%)", "circle(70.7% at 50% 50%)"],
+    ["inset(25% 25% 25% 25%)", "inset(0 0 0 0)"],
     {
       ease: easeInOut,
     },
@@ -44,6 +50,8 @@ const Video = ({ props }: { props: TVideo }) => {
 
   const clipPathSpring = useSpring(clipPath, springConfig);
   const clipPathScale = useSpring(scale, springConfig);
+  const ySpring = useSpring(y, springConfig);
+  const opacitySpring = useSpring(opacity, springConfig);
 
   return (
     <Section
@@ -60,7 +68,7 @@ const Video = ({ props }: { props: TVideo }) => {
               duration: 0.3,
               ease: cubicBezier(0.87, 0, 0.13, 1),
             }}
-            style={{ scale: clipPathScale, clipPath }}
+            style={{ scale: clipPathScale, clipPath, opacity: opacitySpring }}
             playsInline
             autoPlay
             muted

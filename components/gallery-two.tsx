@@ -64,10 +64,12 @@ const GalleryOne = () => {
   const ySpring2 = useSpring(y2, springConfig);
 
   const test = [0, 1, 2, 3, 4, 5, 6];
+  /* bg-[url('/video-pattern-dark.svg')] bg-repeat */
 
   return (
     <Section className="bg-primary-900">
-      <div className="flex  flex-col gap-6 bg-[url('/video-pattern-dark.svg')] bg-repeat">
+      <div className="relative  flex flex-col gap-6">
+        <Image src="/video-pattern-dark.svg" fill={true} alt="test" />
         <motion.div
           ref={containerRef}
           style={{ opacity: opacitySpring, x: xSpring }}
