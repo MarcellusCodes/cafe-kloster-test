@@ -92,6 +92,7 @@ const SecondaryHeading = ({ props }: { props: TSecondaryHeading }) => {
               src={props.image.src}
               priority={true}
               quality={50}
+              placeholder="blur"
               className="rounded-sm object-cover"
             />
           </motion.div>

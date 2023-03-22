@@ -532,7 +532,7 @@ const SecondaryHeadingProps = {
   id: "test",
   title: "Anfahrt",
   caption: "So finden sie Ihren Weg zu uns",
-  image: { src: "/cta-bg-2.jpg", alt: "test" },
+  image: { src: "/cta-bg-2_c.jpg", alt: "test" },
   theme: "dark",
 };
 
