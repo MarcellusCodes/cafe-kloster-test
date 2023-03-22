@@ -26,7 +26,13 @@ const GalleryOne = () => {
           </h3>
         </div>
 
-        <div className="grid w-full grid-cols-1 gap-6 bg-secondary-50  bg-[url('/video-pattern-light.svg')] bg-repeat sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="relative grid w-full grid-cols-1 gap-6 bg-secondary-50  sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <Image
+            src="/video-pattern-light.svg"
+            fill={true}
+            alt="background illustration"
+            className="object-cover"
+          />
           {test.map((item, index) => (
             <GalleryImage key={item} index={index} />
           ))}

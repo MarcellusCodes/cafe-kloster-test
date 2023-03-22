@@ -55,12 +55,26 @@ const Video = ({ props }: { props: TVideo }) => {
 
   return (
     <Section
-      className={`overflow-hidden  bg-no-repeat ${
-        props.theme === "light"
-          ? "bg-secondary-50 bg-[url('/video-pattern-light.svg')]"
-          : "bg-primary-900 bg-[url('/video-pattern-dark.svg')]"
+      className={`overflow-hidden  ${
+        props.theme === "light" ? "bg-secondary-50" : "bg-primary-900"
       }`}
     >
+      <div className={` ${props.theme === "light" ? "" : "hidden"}`}>
+        <Image
+          src="/video-pattern-light.svg"
+          fill={true}
+          alt="background illustration"
+          className="object-cover"
+        />
+      </div>
+      <div className={` ${props.theme === "light" ? "hidden" : ""}`}>
+        <Image
+          src="/video-pattern-dark.svg"
+          fill={true}
+          alt="background illustration"
+          className="object-cover"
+        />
+      </div>
       <div ref={containerRef} className="relative">
         <Container className="flex h-full flex-col gap-12 lg:gap-0">
           <motion.video
