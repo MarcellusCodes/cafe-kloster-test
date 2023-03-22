@@ -86,7 +86,6 @@ const SecondaryHeading = ({ props }: { props: TSecondaryHeading }) => {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
-              delay: 0.3,
               type: "spring",
               stiffness: 60,
               damping: 15,
