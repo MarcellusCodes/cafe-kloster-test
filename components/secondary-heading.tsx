@@ -83,18 +83,25 @@ const SecondaryHeading = ({ props }: { props: TSecondaryHeading }) => {
             <Balancer>{props.caption}</Balancer>
           </p>
           <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.3,
+              type: "spring",
+              stiffness: 60,
+              damping: 15,
+              mass: 1,
+            }}
             style={{ y: transformYImage, scale: scaleImage }}
-            className="scrollbar-hide relative inline-block h-[300px] w-full sm:mt-12 lg:h-[500px]"
+            className=" relative inline-block h-[300px] w-full sm:mt-12 lg:h-[500px]"
           >
             <Image
               alt={props.image.alt}
               fill={true}
               src={props.image.src}
               priority={true}
-              quality={50}
+              quality={100}
               loading="eager"
-              placeholder="blur"
-              blurDataURL="data:image/webp;base64,UklGRmgCAABXRUJQVlA4WAoAAAAgAAAABQAAAwAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAAAAAAAAAAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZWUDhMeQAAAC8FwAAAv6A4kqTkBHd7kwn5J2RP0lAQAASa0s0WbAMALBM7nczJh/T/pSfYemD+Y30RUnnaK9Y5vNL3q1FiEMJIhw/ZLaOQJMfGgRJXTMeXmySPIyRS7uhtTksRNTYGhW0bqanje2aI6H/8t0YPd+fabCbSKKcAOgMA"
               className="rounded-sm object-cover"
             />
           </motion.div>
