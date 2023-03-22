@@ -35,7 +35,7 @@ const Video = ({ props }: { props: TVideo }) => {
     ease: easeInOut,
   });
 
-  const opacity = useTransform(scrollYProgress, [1, 0], [0, 1]);
+  const opacity = useTransform(scrollYProgress, [1, 0.5], [0, 1]);
 
   const clipPath = useTransform(
     scrollYProgress,

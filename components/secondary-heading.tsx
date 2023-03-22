@@ -48,7 +48,7 @@ const SecondaryHeading = ({ props }: { props: TSecondaryHeading }) => {
   });
 
   return (
-    <div ref={containerRef} className="relative  overflow-hidden">
+    <div ref={containerRef} className="relative overflow-hidden">
       <Section
         className={`scrollbar-hide overflow-y-hidden  ${
           props.theme === "light" ? "bg-primary-50" : "bg-primary-900"

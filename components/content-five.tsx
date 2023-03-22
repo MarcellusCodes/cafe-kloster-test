@@ -46,7 +46,7 @@ const Feature = ({ props, index }: { props: TFeature; index: number }) => {
     >
       <motion.div className="rounded-sm border-2 border-primary-900 bg-tertiary-400 p-4">
         <motion.svg
-          transition={{ duration: 0.6, ease: [0.87, 0, 0.13, 1] }}
+          transition={{ stiffness: 60, damping: 15, mass: 1, type: "spring" }}
           initial="initial"
           whileInView="animate"
           variants={{

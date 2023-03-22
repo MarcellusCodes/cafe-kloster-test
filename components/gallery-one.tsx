@@ -55,8 +55,10 @@ const GalleryImage = ({ index }: { index: number }) => {
         y: 0,
         clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
         transition: {
-          duration: 0.3,
-          ease: [0.645, 0.045, 0.355, 1],
+          type: "spring",
+          stiffness: 60,
+          damping: 15,
+          mass: 1,
           delay: index * 0.1,
         },
       }}

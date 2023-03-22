@@ -43,7 +43,12 @@ const MasonryGallery = ({ props }: { props: TMasonryGallery }) => {
                   y: 0,
                   clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
                 }}
-                transition={{ duration: 0.3, ease: [1, 0, 0, 1] }}
+                transition={{
+                  stiffness: 60,
+                  damping: 15,
+                  mass: 1,
+                  type: "spring",
+                }}
                 viewport={{ once: true, margin: "0px 0px -300px 0px" }}
                 key={image.id}
                 className="shadow-main group  relative inline-block w-full overflow-hidden rounded-sm outline outline-4 outline-offset-8 outline-transparent duration-300 hover:z-20 hover:scale-110 hover:shadow-xl hover:outline-tertiary-300 active:z-20 active:scale-110  active:border-tertiary-300 active:outline-tertiary-300"
