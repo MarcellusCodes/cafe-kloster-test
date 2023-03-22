@@ -112,7 +112,7 @@ const ContentImages = ({ key, grid, alt, src, scrollYProgress }) => {
   const transformYImage = useTransform(
     scrollYProgress,
     [1, 0],
-    [Math.floor(Math.random() * 601) - 300, 0],
+    [Math.floor(Math.random() * 301) - 100, 0],
     {
       ease: cubicBezier(0.22, 0.61, 0.36, 1),
     },
@@ -120,7 +120,7 @@ const ContentImages = ({ key, grid, alt, src, scrollYProgress }) => {
   const transformXImage = useTransform(
     scrollYProgress,
     [1, 0],
-    [Math.floor(Math.random() * 601) - 300, 0],
+    [Math.floor(Math.random() * 301) - 100, 0],
     {
       ease: cubicBezier(0.22, 0.61, 0.36, 1),
     },
@@ -136,6 +136,7 @@ const ContentImages = ({ key, grid, alt, src, scrollYProgress }) => {
         alt={alt}
         src={src}
         fill={true}
+        placeholder="blur"
         className="rounded-sm object-cover"
       />
     </motion.div>
