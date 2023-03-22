@@ -136,7 +136,6 @@ const ContentImages = ({ key, grid, alt, src, scrollYProgress }) => {
         alt={alt}
         src={src}
         fill={true}
-        placeholder="blur"
         className="rounded-sm object-cover"
       />
     </motion.div>
