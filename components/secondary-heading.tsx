@@ -90,7 +90,8 @@ const SecondaryHeading = ({ props }: { props: TSecondaryHeading }) => {
               alt={props.image.alt}
               fill={true}
               src={props.image.src}
-              loading="lazy"
+              priority={true}
+              quality={50}
               className="rounded-sm object-cover"
             />
           </motion.div>
