@@ -69,12 +69,15 @@ const GalleryOne = () => {
   return (
     <Section className="bg-primary-900">
       <div className="relative flex  flex-col gap-6 ">
-        <Image
-          src="/video-pattern-dark.svg"
-          fill={true}
-          alt="background illustration"
-          className="object-cover"
-        />
+        <div className="absolute top-0 left-0 h-full w-full">
+          <Image
+            src="/video-pattern-dark.svg"
+            fill={true}
+            alt="background illustration"
+            className="object-cover"
+          />
+        </div>
+
         <motion.div
           ref={containerRef}
           style={{ opacity: opacitySpring, x: xSpring }}
