@@ -73,20 +73,20 @@ const SecondaryHeading = ({ props }: { props: TSecondaryHeading }) => {
             <path d="M275.9 413.4c-7.1 2.9-10.2 5.1-16.3 11.5-5.6 6.1-8.8 12.8-11.1 23.3-2.7 12.6-10 21.2-19.9 23.9-5.7 1.5-7.6 3.5-7.6 7.9 0 3.7 1.7 6 5.3 7.3 2.5.9 13.1-2.8 18.3-6.3 5.4-3.8 11.7-11 14.4-16.6 1.2-2.4 3.2-8.7 4.5-13.9 1.3-5.2 3.3-10.8 4.5-12.5 3.5-4.9 10.3-10.1 14.8-11.3 5.8-1.5 8.2-4 8.2-8.2 0-4.1-3.2-7.5-6.9-7.5-1.4 0-5.1 1.1-8.2 2.4z" />
           </motion.svg>
           <motion.h2
-            initial={{ opacity: 0, y: -25 }}
+            /* initial={{ opacity: 0, y: -25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
               type: "spring",
               stiffness: 60,
               damping: 15,
               mass: 1,
-            }}
+            }} */
             className="mb-6 text-center font-text  text-xl font-semibold text-tertiary-300"
           >
             {props.title}
           </motion.h2>
           <motion.p
-            initial={{ opacity: 0, y: -25 }}
+            /* initial={{ opacity: 0, y: -25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
               delay: 0.15,
@@ -94,7 +94,7 @@ const SecondaryHeading = ({ props }: { props: TSecondaryHeading }) => {
               stiffness: 60,
               damping: 15,
               mass: 1,
-            }}
+            }} */
             className={`mb-12 text-center font-title text-4xl  ${
               props.theme === "light" ? "text-primary-900" : "text-white"
             } sm:text-6xl xl:text-8xl`}
@@ -102,7 +102,7 @@ const SecondaryHeading = ({ props }: { props: TSecondaryHeading }) => {
             <Balancer>{props.caption}</Balancer>
           </motion.p>
           <motion.div
-            initial={{ opacity: 0, y: 100 }}
+            /* initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
               delay: 0.3,
@@ -110,7 +110,7 @@ const SecondaryHeading = ({ props }: { props: TSecondaryHeading }) => {
               stiffness: 60,
               damping: 15,
               mass: 1,
-            }}
+            }} */
             style={{ y: transformYImage, scale: scaleImage }}
             className=" relative inline-block h-[300px] w-full sm:mt-12 lg:h-[500px]"
           >
