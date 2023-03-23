@@ -102,7 +102,7 @@ const SecondaryHeading = ({ props }: { props: TSecondaryHeading }) => {
             <Balancer>{props.caption}</Balancer>
           </motion.p>
           <motion.div
-            initial={{ opacity: 0, y: -25 }}
+            initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
               delay: 0.3,
