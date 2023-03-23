@@ -111,7 +111,7 @@ const SecondaryHeading = ({ props }: { props: TSecondaryHeading }) => {
               damping: 15,
               mass: 1,
             }} */
-            style={{ y: transformYImage, scale: scaleImage }}
+            /* style={{ y: transformYImage, scale: scaleImage }} */
             className=" relative inline-block h-[300px] w-full sm:mt-12 lg:h-[500px]"
           >
             <Image
@@ -120,7 +120,7 @@ const SecondaryHeading = ({ props }: { props: TSecondaryHeading }) => {
               src={props.image.src}
               priority={true}
               quality={50}
-              loading="lazy"
+              loading="eager"
               className="rounded-sm object-cover"
             />
           </motion.div>
