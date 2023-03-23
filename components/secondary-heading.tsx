@@ -120,7 +120,7 @@ const SecondaryHeading = ({ props }: { props: TSecondaryHeading }) => {
               src={props.image.src}
               priority={true}
               quality={50}
-              loading="eager"
+              loading="lazy"
               className="rounded-sm object-cover"
             />
           </motion.div>
