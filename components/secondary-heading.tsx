@@ -102,8 +102,9 @@ const SecondaryHeading = ({ props }: { props: TSecondaryHeading }) => {
             <Balancer>{props.caption}</Balancer>
           </motion.p>
           <motion.div
-            /* initial={{ opacity: 0, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ y: "0%" }}
+            animate={{ y: "0%" }}
+            /*
             transition={{
               delay: 0.3,
               type: "spring",
@@ -111,7 +112,7 @@ const SecondaryHeading = ({ props }: { props: TSecondaryHeading }) => {
               damping: 15,
               mass: 1,
             }} */
-            /* style={{ y: transformYImage, scale: scaleImage }} */
+            style={{ y: transformYImage, scale: scaleImage }}
             className=" relative inline-block h-[300px] w-full sm:mt-12 lg:h-[500px]"
           >
             <Image
