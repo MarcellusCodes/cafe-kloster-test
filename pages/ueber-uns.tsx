@@ -546,13 +546,13 @@ export default function UeberUns() {
         <Alert props={alertProps} />
         <Navbar props={NavbarProps} />
         <SecondaryHeading props={SecondaryHeadingProps} />
-        <ContentThree props={ContentThreeProps} />
+        {/* <ContentThree props={ContentThreeProps} /> */}
         <CallToAction props={CallToActionProps} />
         <Tab props={TabProps} />
 
         <ContentTwo props={ContentTwoProps} />
         <Faq props={faqProps} />
-        <LeafletMap />
+        {/* <LeafletMap /> */}
         <CookieBanner />
         {/* <CallToActionImage props={CallToActionImageProps} />
         <MasonryGallery props={MasonryGalleryProps} />
