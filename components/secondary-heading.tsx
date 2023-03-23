@@ -83,8 +83,8 @@ const SecondaryHeading = ({ props }: { props: TSecondaryHeading }) => {
             <Balancer>{props.caption}</Balancer>
           </p>
           <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{
               type: "spring",
               stiffness: 60,
@@ -99,7 +99,7 @@ const SecondaryHeading = ({ props }: { props: TSecondaryHeading }) => {
               fill={true}
               src={props.image.src}
               priority={true}
-              quality={100}
+              quality={50}
               loading="eager"
               className="rounded-sm object-cover"
             />
