@@ -285,7 +285,7 @@ const CtaGallery = ({ props }: { props: TCtaGallery }) => {
           </motion.div>
           <div className="absolute left-0 -bottom-20 flex flex-row items-center gap-8 lg:-left-16 lg:-bottom-4 xl:bottom-20">
             <button
-              className="group relative grid h-10 w-10  place-items-center rounded-full bg-tertiary-300 duration-300 hover:scale-110 hover:bg-tertiary-400 active:scale-110 active:bg-tertiary-400"
+              className="group relative grid h-10 w-10 place-items-center rounded-full  bg-tertiary-300 duration-300 hover:scale-110 hover:bg-tertiary-400 focus:ring-4 focus:ring-tertiary-300 active:scale-110 active:bg-tertiary-400"
               onClick={() => {
                 swiperInstance.slidePrev();
               }}
@@ -299,7 +299,7 @@ const CtaGallery = ({ props }: { props: TCtaGallery }) => {
               </svg>
             </button>
             <button
-              className="group relative grid h-10 w-10  place-items-center rounded-full bg-tertiary-300 duration-300 hover:scale-110 hover:bg-tertiary-400 active:scale-110 active:bg-tertiary-400"
+              className="group relative grid h-10 w-10 place-items-center rounded-full bg-tertiary-300 duration-300 hover:scale-110 hover:bg-tertiary-400 focus:ring-4 focus:ring-tertiary-300 active:scale-110 active:bg-tertiary-400"
               onClick={() => {
                 swiperInstance.slideNext();
               }}

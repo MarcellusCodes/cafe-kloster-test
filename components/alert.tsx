@@ -44,7 +44,10 @@ const Alert = ({ props }: { props: TAlert }) => {
             </p>
           </div>
 
-          <button onClick={handleActive}>
+          <button
+            onClick={handleActive}
+            className="rounded-full focus:ring-2 focus:ring-primary-500"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"

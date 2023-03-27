@@ -13,11 +13,8 @@ import Marquee from "react-fast-marquee";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
 
-const GalleryOne = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const containerRef2 = useRef<HTMLDivElement>(null);
-  const [swiperInstance, setSwiperInstance] = useState(null);
-  const [swiperInstance2, setSwiperInstance2] = useState(null);
+const GalleryTwo = () => {
+  /* const containerRef = useRef<HTMLDivElement>(null);
 
   const firstSliderScroll = useScroll({
     target: containerRef,
@@ -61,10 +58,9 @@ const GalleryOne = () => {
   const y2 = useTransform(firstSliderScroll.scrollYProgress, [1, 0], [25, 0]);
 
   const rotateSpring2 = useSpring(rotate2, springConfig);
-  const ySpring2 = useSpring(y2, springConfig);
+  const ySpring2 = useSpring(y2, springConfig); */
 
   const test = [0, 1, 2, 3, 4, 5, 6];
-  /* bg-[url('/video-pattern-dark.svg')] bg-repeat */
 
   return (
     <Section className="bg-primary-900">
@@ -77,264 +73,43 @@ const GalleryOne = () => {
             className="object-cover"
           />
         </div>
-
-        <motion.div
-          ref={containerRef}
-          style={{ opacity: opacitySpring, x: xSpring }}
-          className="relative h-[200px] w-full lg:h-[300px]"
+        <Marquee
+          className="overflow-hidden bg-transparent"
+          gradient={false}
+          pauseOnClick
+          pauseOnHover={false}
+          speed={50}
         >
-          <Swiper
-            modules={[Autoplay]}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-            }}
-            spaceBetween={24}
-            slidesPerView={1}
-            onSlideChange={() => {
-              swiperInstance?.slidePrev();
-              swiperInstance2?.slideNext();
-            }}
-            breakpoints={{
-              450: {
-                slidesPerView: 2,
-                spaceBetween: 24,
-              },
-              900: {
-                slidesPerView: 2,
-                spaceBetween: 24,
-              },
-              1000: {
-                slidesPerView: 3,
-                spaceBetween: 24,
-              },
-            }}
-            className="absolute top-0 left-0 h-full w-full"
-          >
-            <SwiperSlide className="relative">
+          {test.map((item) => (
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ margin: "0% 0% 0% -10%" }}
+              transition={{
+                type: "spring",
+                stiffness: 60,
+                damping: 15,
+                mass: 1,
+              }}
+              style={{
+                height: Math.floor(Math.random() * (600 - 200 + 1)) + 200,
+                width: Math.floor(Math.random() * (400 - 200 + 1)) + 200,
+              }}
+              key={item}
+              className="relative mr-6"
+            >
               <Image
-                alt="test"
-                src="/header-image.jpg"
+                src="/cta-bg-2_c.jpg"
                 fill={true}
-                className="rounded-sm object-cover"
+                alt="image"
+                className="object-cover"
               />
-            </SwiperSlide>
-            <SwiperSlide className="relative">
-              <Image
-                alt="test"
-                src="/header-preview-2.jpg"
-                fill={true}
-                className="rounded-sm object-cover"
-              />
-            </SwiperSlide>
-            <SwiperSlide className="relative">
-              <Image
-                alt="test"
-                src="/cta-bg-2.jpg"
-                fill={true}
-                className="rounded-sm object-cover"
-              />
-            </SwiperSlide>
-            <SwiperSlide className="relative">
-              <Image
-                alt="test"
-                src="/cta-bg.jpg"
-                fill={true}
-                className="rounded-sm object-cover"
-              />
-            </SwiperSlide>
-            <SwiperSlide className="relative">
-              <Image
-                alt="test"
-                src="/cta-bg-2.jpg"
-                fill={true}
-                className="rounded-sm object-cover"
-              />
-            </SwiperSlide>
-          </Swiper>
-        </motion.div>
-        <motion.div
-          style={{ opacity: opacitySpring }}
-          className="relative h-[200px] w-full lg:h-[300px]"
-        >
-          <Swiper
-            slidesPerView={2}
-            spaceBetween={24}
-            loop={true}
-            breakpoints={{
-              450: {
-                slidesPerView: 3,
-                spaceBetween: 24,
-              },
-              900: {
-                slidesPerView: 3,
-                spaceBetween: 24,
-              },
-              1000: {
-                slidesPerView: 4,
-                spaceBetween: 24,
-              },
-            }}
-            onSwiper={(swiper) => setSwiperInstance(swiper)}
-            className="absolute top-0 left-0 h-full w-full"
-          >
-            <SwiperSlide className="relative">
-              <Image
-                alt="test"
-                src="/header-image.jpg"
-                fill={true}
-                className="rounded-sm object-cover"
-              />
-            </SwiperSlide>
-            <SwiperSlide className="relative">
-              <Image
-                alt="test"
-                src="/header-preview-2.jpg"
-                fill={true}
-                className="rounded-sm object-cover"
-              />
-            </SwiperSlide>
-            <SwiperSlide className="relative">
-              <Image
-                alt="test"
-                src="/cta-bg-2.jpg"
-                fill={true}
-                className="rounded-sm object-cover"
-              />
-            </SwiperSlide>
-            <SwiperSlide className="relative">
-              <Image
-                alt="test"
-                src="/cta-bg.jpg"
-                fill={true}
-                className="rounded-sm object-cover"
-              />
-            </SwiperSlide>
-            <SwiperSlide className="relative">
-              <Image
-                alt="test"
-                src="/cta-bg-2.jpg"
-                fill={true}
-                className="rounded-sm object-cover"
-              />
-            </SwiperSlide>
-            <SwiperSlide className="relative">
-              <Image
-                alt="test"
-                src="/header-image.jpg"
-                fill={true}
-                className="rounded-sm object-cover"
-              />
-            </SwiperSlide>
-            <SwiperSlide className="relative">
-              <Image
-                alt="test"
-                src="/header-preview-2.jpg"
-                fill={true}
-                className="rounded-sm object-cover"
-              />
-            </SwiperSlide>
-            <SwiperSlide className="relative">
-              <Image
-                alt="test"
-                src="/cta-bg-2.jpg"
-                fill={true}
-                className="rounded-sm object-cover"
-              />
-            </SwiperSlide>
-            <SwiperSlide className="relative">
-              <Image
-                alt="test"
-                src="/cta-bg.jpg"
-                fill={true}
-                className="rounded-sm object-cover"
-              />
-            </SwiperSlide>
-            <SwiperSlide className="relative">
-              <Image
-                alt="test"
-                src="/cta-bg-2.jpg"
-                fill={true}
-                className="rounded-sm object-cover"
-              />
-            </SwiperSlide>
-          </Swiper>
-        </motion.div>
-        <div className="relative h-[200px] w-full lg:h-[300px]">
-          <Swiper
-            onSwiper={(swiper) => setSwiperInstance2(swiper)}
-            spaceBetween={24}
-            slidesPerView={1}
-            loop={true}
-            breakpoints={{
-              450: {
-                slidesPerView: 2,
-                spaceBetween: 24,
-              },
-              900: {
-                slidesPerView: 2,
-                spaceBetween: 24,
-              },
-              1000: {
-                slidesPerView: 3,
-                spaceBetween: 24,
-              },
-            }}
-            className="absolute top-0 left-0 h-full w-full"
-          >
-            <SwiperSlide className="relative">
-              <Image
-                alt="test"
-                src="/header-image.jpg"
-                fill={true}
-                className="rounded-sm object-cover"
-              />
-            </SwiperSlide>
-            <SwiperSlide className="relative">
-              <Image
-                alt="test"
-                src="/header-preview-2.jpg"
-                fill={true}
-                className="rounded-sm object-cover"
-              />
-            </SwiperSlide>
-            <SwiperSlide className="relative">
-              <Image
-                alt="test"
-                src="/cta-bg-2.jpg"
-                fill={true}
-                className="rounded-sm object-cover"
-              />
-            </SwiperSlide>
-            <SwiperSlide className="relative">
-              <Image
-                alt="test"
-                src="/cta-bg.jpg"
-                fill={true}
-                className="rounded-sm object-cover"
-              />
-            </SwiperSlide>
-            <SwiperSlide className="relative">
-              <Image
-                alt="test"
-                src="/cta-bg-2.jpg"
-                fill={true}
-                className="rounded-sm object-cover"
-              />
-            </SwiperSlide>
-            <SwiperSlide className="relative">
-              <Image
-                alt="test"
-                src="/cta-bg-2.jpg"
-                fill={true}
-                className="rounded-sm object-cover"
-              />
-            </SwiperSlide>
-          </Swiper>
-        </div>
+            </motion.div>
+          ))}
+        </Marquee>
       </div>
     </Section>
   );
 };
 
-export default GalleryOne;
+export default GalleryTwo;

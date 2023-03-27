@@ -25,6 +25,7 @@ import {
   GalleryOne,
   Video,
   GalleryTwo,
+  CallToActionColored,
 } from "@/components/index";
 import { useSignInModal } from "../components/layout/sign-in-modal";
 import { useState, Suspense } from "react";
@@ -625,6 +626,15 @@ const VideoProps = {
   theme: "light",
 };
 
+const CallToActionColoredProps = {
+  id: "test",
+  title: "Guten Appetit",
+  caption: "Leckereien aus dem Kloster",
+  text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. At nesciunt fugiat iure suscipit officia, provident id. Modi, rem! Temporibus, cupiditate.",
+  cta_title: "Jetzt Essen",
+  cta_link: "/",
+};
+
 export default function Home() {
   const { SignInModal, setShowSignInModal } = useSignInModal();
   return (
@@ -652,6 +662,7 @@ export default function Home() {
         <CookieBanner />
         <CallToActionImage props={CallToActionImageProps} />
         <CallToAction props={CallToActionProps} />
+        <CallToActionColored props={CallToActionColoredProps} />
         <ContentOne props={ContentOneProps} />
         <ContentThree props={ContentThreeProps} />
         <ContentTwo props={ContentTwoProps} />

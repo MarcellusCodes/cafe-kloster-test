@@ -28,3 +28,5 @@ export { default as ContentSix } from "./content-six";
 export { default as GalleryOne } from "./gallery-one";
 export { default as Video } from "./video";
 export { default as GalleryTwo } from "./gallery-two";
+export { default as SecondaryLink } from "./secondary-link";
+export { default as CallToActionColored } from "./call-to-action-colored";

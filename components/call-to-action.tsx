@@ -33,11 +33,7 @@ const CallToAction = ({ props }: { props: TCallToAction }) => {
           {props.title}
         </h2>
         <motion.p
-          initial={{ scale: 0 }}
-          whileInView={{ scale: [0, 1.2, 1] }}
-          transition={{ duration: 1, ease: [1, 0, 0, 1] }}
-          viewport={{ once: true, margin: "0px 0px -300px 0px" }}
-          className={`mb-6 w-full text-center font-heading text-4xl font-bold uppercase ${
+          className={` w-full text-center font-heading text-4xl font-bold uppercase ${
             props.theme === "light" ? "text-primary-900" : "text-white"
           } sm:text-6xl`}
         >
