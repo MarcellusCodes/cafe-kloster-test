@@ -60,7 +60,15 @@ const GalleryTwo = () => {
   const rotateSpring2 = useSpring(rotate2, springConfig);
   const ySpring2 = useSpring(y2, springConfig); */
 
-  const test = [0, 1, 2, 3, 4, 5, 6];
+  const test = [
+    "/content_one-1.jpg",
+    "/content_one-2.jpg",
+    "/cta-bg-2_c.jpg",
+    "/header-image.jpg",
+    "/header-preview-2.jpg",
+    "/faq.jpg",
+    "/cta-bg.jpg",
+  ];
 
   return (
     <Section className="bg-primary-900">
@@ -73,24 +81,16 @@ const GalleryTwo = () => {
             className="object-cover"
           />
         </div>
+
         <Marquee
-          className="overflow-hidden bg-transparent"
+          className="z-20 overflow-hidden bg-transparent"
           gradient={false}
           pauseOnClick
           pauseOnHover={false}
-          speed={50}
+          speed={100}
         >
           {test.map((item) => (
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ margin: "0% 0% 0% -10%" }}
-              transition={{
-                type: "spring",
-                stiffness: 60,
-                damping: 15,
-                mass: 1,
-              }}
               style={{
                 height: Math.floor(Math.random() * (600 - 200 + 1)) + 200,
                 width: Math.floor(Math.random() * (400 - 200 + 1)) + 200,
@@ -99,7 +99,7 @@ const GalleryTwo = () => {
               className="relative mr-6"
             >
               <Image
-                src="/cta-bg-2_c.jpg"
+                src={item}
                 fill={true}
                 alt="image"
                 className="object-cover"

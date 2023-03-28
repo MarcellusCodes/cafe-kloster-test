@@ -252,7 +252,6 @@ const CtaGallery = ({ props }: { props: TCtaGallery }) => {
             <Swiper
               spaceBetween={25}
               slidesPerView={1}
-              loop={true}
               onSwiper={(swiper) => setSwiperInstance(swiper)}
               breakpoints={{
                 450: {

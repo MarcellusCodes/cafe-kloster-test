@@ -33,6 +33,7 @@ const GalleryOne = () => {
             alt="background illustration"
             className="object-cover"
           />
+
           {test.map((item, index) => (
             <GalleryImage key={item} index={index} />
           ))}
