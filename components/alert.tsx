@@ -45,6 +45,7 @@ const Alert = ({ props }: { props: TAlert }) => {
           </div>
 
           <button
+            aria-label="Close alert"
             onClick={handleActive}
             className="rounded-full focus:ring-2 focus:ring-primary-500"
           >

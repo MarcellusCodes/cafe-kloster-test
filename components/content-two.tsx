@@ -44,7 +44,13 @@ const Box = ({ props, index }: { props: TBox; index: number }) => {
         index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"
       }`}
     >
-      <div className="relative mt-6 grid h-[400px] w-full place-items-center rounded-sm border-gray-300 border-opacity-10 bg-primary-900 bg-opacity-80 bg-[url('/content-2-pattern.svg')]  bg-no-repeat md:h-[700px] lg:mt-0 lg:w-1/2">
+      <div className="relative mt-6 grid h-[400px] w-full place-items-center rounded-sm border-gray-300 border-opacity-10 bg-primary-900  md:h-[700px] lg:mt-0 lg:w-1/2">
+        <Image
+          src="/content-2-pattern.svg"
+          fill={true}
+          alt="background illustration"
+          className="object-cover opacity-80"
+        />
         <motion.div
           initial={{ scaleY: 0 }}
           animate={LBorderControl}

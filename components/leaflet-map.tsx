@@ -75,6 +75,7 @@ const LeafletMap = () => {
                 <li>Deutschland</li>
               </ul>
               <a
+                aria-label="Link to Google Maps Routing for Café Kloster"
                 target="_blank"
                 rel="noreferrer"
                 href="https://www.google.com/maps/place/Caf%C3%A9+Kloster/@54.0872563,12.1307776,17z/data=!3m1!4b1!4m6!3m5!1s0x47ac575480da14f1:0x14609f90cc0c9161!8m2!3d54.0872532!4d12.1329663!16s%2Fg%2F12qhj2qm8"

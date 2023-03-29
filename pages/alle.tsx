@@ -23,7 +23,6 @@ import {
   ContentFive,
   ContentSix,
   GalleryOne,
-  Video,
   GalleryTwo,
   CallToActionColored,
   ScrollingGallery,
@@ -33,6 +32,10 @@ import { useState, Suspense } from "react";
 import { motion } from "framer-motion";
 
 const LeafletMap = dynamic(() => import("@/components/leaflet-map"), {
+  loading: () => <p>Loading...</p>,
+});
+
+const Video = dynamic(() => import("@/components/video"), {
   loading: () => <p>Loading...</p>,
 });
 
