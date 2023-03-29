@@ -70,7 +70,7 @@ const GalleryImage = ({ index }: { index: number }) => {
     >
       <Image
         alt="test"
-        src="/cta-bg-2.jpg"
+        src="/content_one-3.jpg"
         fill={true}
         className="rounded-sm object-cover bg-blend-screen brightness-[.6] duration-300 group-hover:scale-110 group-hover:brightness-100"
       />
