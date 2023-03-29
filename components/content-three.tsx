@@ -26,7 +26,7 @@ type TContentThree = {
   }[];
 };
 
-const imageGrid = [
+const contentTwoImgGrid = [
   "z-10 col-start-3 col-end-10 row-start-3 row-end-11 sm:col-start-4",
   "col-start-1 col-end-5 row-start-1 row-end-5 sm:col-start-2",
   "col-start-1 col-end-4 row-start-7 row-end-10",
@@ -35,6 +35,12 @@ const imageGrid = [
 ];
 
 const ContentThree = ({ props }: { props: TContentThree }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["center center", "start end"],
+  });
   return (
     <Section className="h-full bg-secondary-50">
       <Container className="flex h-full flex-col items-start gap-12 lg:flex-row">
@@ -104,7 +110,10 @@ const ContentThree = ({ props }: { props: TContentThree }) => {
             <PrimaryLink href={props.cta_link!} title={props.cta_title!} />
           )}
         </div>
-        <div className="group relative grid h-[700px] w-full grid-cols-12 grid-rows-12 gap-6 lg:w-1/2">
+        <div
+          ref={containerRef}
+          className="group relative grid h-[700px] w-full grid-cols-12 grid-rows-12 gap-6 lg:w-1/2"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 128 128"
@@ -115,19 +124,13 @@ const ContentThree = ({ props }: { props: TContentThree }) => {
             <path d="M40.1 48c-8.3 2-12.5 8.2-11.8 17.7 1.5 21.3 29.6 34.4 41 19.1 2.8-3.7 3.3-11.4 1.3-17.6C66.5 54.9 51.4 45.4 40.1 48zm13.4 6.4c5.1 2.3 9.3 6.4 12 11.5 1.8 3.5 2.8 9.5 2.1 11.9-.6 1.8-.9 1.8-5.9.6-5.9-1.6-9.7-5.1-9.7-9.2C52 63 46.6 58 38.5 56.5l-4-.7 2.4-1.9c3.3-2.7 10.3-2.5 16.6.5zm-13.7 6.9c3.9 1 5 1.8 6.4 4.7 1 1.9 2 4.8 2.3 6.4.9 4.2 5.6 8.3 10.9 9.7 2.5.6 4.6 1.5 4.6 2 0 2.9-10.7 3.9-16.4 1.5-5.1-2.1-10.7-7.6-13.2-13.1-3.1-6.6-3.2-14.7-.2-12.9.5.3 3 1.1 5.6 1.7zM28.4 110.5c-.9 2.1.4 3 8.6 5.6 8.1 2.6 33.5 3.8 44.7 2 10.1-1.5 18.5-4.8 18.1-6.9-.4-2-1.2-1.9-10.3.9-6.2 2-9.2 2.2-25.5 2.2-18.3 0-23.8-.7-33.2-4.8-1.2-.5-2-.2-2.4 1z" />
           </svg>
           {props.images.map((image, index) => (
-            <div
+            <ContentImages
               key={image.id}
-              className={`${imageGrid[index]} rounded-sm outline outline-4 outline-offset-8 outline-transparent duration-300 ease-out hover:z-20 hover:scale-[1.1!important] hover:outline-tertiary-300 active:z-20 active:scale-[1.1!important] active:outline-tertiary-300 `}
-            >
-              <div className="relative h-full w-full">
-                <Image
-                  alt={image.alt}
-                  src={image.src}
-                  fill={true}
-                  className="rounded-sm object-cover"
-                />
-              </div>
-            </div>
+              grid={contentTwoImgGrid[index]}
+              alt={image.alt}
+              src={image.src}
+              scrollYProgress={scrollYProgress}
+            />
           ))}
         </div>
       </Container>
@@ -136,3 +139,37 @@ const ContentThree = ({ props }: { props: TContentThree }) => {
 };
 
 export default ContentThree;
+
+const ContentImages = ({ key, grid, alt, src, scrollYProgress }) => {
+  const transformYImage = useTransform(
+    scrollYProgress,
+    [1, 0],
+    [Math.floor(Math.random() * 301) - 100, 0],
+    {
+      ease: cubicBezier(0.22, 0.61, 0.36, 1),
+    },
+  );
+  const transformXImage = useTransform(
+    scrollYProgress,
+    [1, 0],
+    [Math.floor(Math.random() * 301) - 100, 0],
+    {
+      ease: cubicBezier(0.22, 0.61, 0.36, 1),
+    },
+  );
+  return (
+    <motion.div
+      style={{ y: transformYImage, x: transformXImage }}
+      whileHover={{ scale: 1.1 }}
+      key={key}
+      className={`relative ${grid}  rounded-sm outline outline-4  outline-offset-8  outline-transparent duration-300 ease-out hover:z-50 hover:scale-[1.1!important] hover:outline-tertiary-300 active:z-50 active:scale-[1.1!important] active:outline-tertiary-300`}
+    >
+      <Image
+        alt={alt}
+        src={src}
+        fill={true}
+        className="rounded-sm object-cover"
+      />
+    </motion.div>
+  );
+};
