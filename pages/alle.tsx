@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import {
   Footer,
   Header,
@@ -13,7 +14,6 @@ import {
   MarqueeReview,
   LoadingScreen,
   CallToActionImage,
-  LeafletMap,
   CookieBanner,
   Navbar,
   TertiaryHeading,
@@ -31,7 +31,10 @@ import {
 import { useSignInModal } from "../components/layout/sign-in-modal";
 import { useState, Suspense } from "react";
 import { motion } from "framer-motion";
-import dynamic from "next/dynamic";
+
+const LeafletMap = dynamic(() => import("@/components/leaflet-map"), {
+  loading: () => <p>Loading...</p>,
+});
 
 const headerProps = {
   id: "1",
