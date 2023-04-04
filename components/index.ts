@@ -31,3 +31,4 @@ export { default as GalleryTwo } from "./gallery-two";
 export { default as SecondaryLink } from "./secondary-link";
 export { default as CallToActionColored } from "./call-to-action-colored";
 export { default as ScrollingGallery } from "./scrolling-gallery";
+export { default as MarqueeReviewTwo } from "./marquee-review-two";

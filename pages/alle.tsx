@@ -26,6 +26,7 @@ import {
   GalleryTwo,
   CallToActionColored,
   ScrollingGallery,
+  MarqueeReviewTwo,
 } from "@/components/index";
 import { useSignInModal } from "../components/layout/sign-in-modal";
 import { useState, Suspense } from "react";
@@ -651,6 +652,7 @@ export default function Home() {
         <Alert props={alertProps} />
         <Navbar props={NavbarProps} />
         <Header props={headerProps} />
+        <MarqueeReviewTwo />
         <Video props={VideoProps} />
         <ScrollingGallery />
         <ContentFive props={ContentFiveProps} />
