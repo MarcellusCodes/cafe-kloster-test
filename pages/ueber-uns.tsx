@@ -531,7 +531,7 @@ const TabProps = {
 const SecondaryHeadingProps = {
   id: "test",
   title: "Über Uns",
-  caption: "Alles zu unserer Enstehung sowie zu unseren Zielen",
+  caption: "Alles zu unserer Entstehung sowie zu unseren Zielen",
   image: { src: "/cta-bg.jpg", alt: "test" },
   theme: "dark",
 };

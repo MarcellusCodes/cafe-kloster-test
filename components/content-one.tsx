@@ -1,7 +1,13 @@
 import React, { useRef } from "react";
 import { Section, Container } from "@/components/index";
 import Image from "next/image";
-import { cubicBezier, useScroll, useTransform, motion } from "framer-motion";
+import {
+  cubicBezier,
+  useScroll,
+  useTransform,
+  motion,
+  useSpring,
+} from "framer-motion";
 
 const contentOneImgGrid = [
   "lg:col-start-9 col-start-7 col-end-13 row-start-2 row-end-12 z-20",
@@ -113,18 +119,19 @@ const ContentImages = ({ key, grid, alt, src, scrollYProgress }) => {
     scrollYProgress,
     [1, 0],
     [Math.floor(Math.random() * 301) - 100, 0],
-    {
+    /* {
       ease: cubicBezier(0.22, 0.61, 0.36, 1),
-    },
+    }, */
   );
   const transformXImage = useTransform(
     scrollYProgress,
     [1, 0],
     [Math.floor(Math.random() * 301) - 100, 0],
-    {
+    /* {
       ease: cubicBezier(0.22, 0.61, 0.36, 1),
-    },
+    }, */
   );
+
   return (
     <motion.div
       style={{ y: transformYImage, x: transformXImage }}

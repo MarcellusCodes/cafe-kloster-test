@@ -43,9 +43,19 @@ const SecondaryHeading = ({ props }: { props: TSecondaryHeading }) => {
     ease: circOut,
   });
 
-  const rotateSvg = useTransform(scrollYProgress, [1, 0], [-360, 360], {
+  const rotateSvg = useTransform(
+    scrollYProgress,
+    [1, 0],
+    [0, 360] /* , {
     ease: cubicBezier(0.6, -0.28, 0.74, 0.05),
-  });
+  } */,
+  );
+
+  const springConfig = { stiffness: 60, damping: 15, mass: 1 };
+
+  const rotateSpring = useSpring(rotateSvg, springConfig);
+  const scaleSpring = useSpring(scaleImage, springConfig);
+  const transformSpring = useSpring(transformYImage, springConfig);
 
   return (
     <div ref={containerRef} className="relative overflow-hidden">
@@ -56,7 +66,7 @@ const SecondaryHeading = ({ props }: { props: TSecondaryHeading }) => {
       >
         <Container className="scrollbar-hide relative flex h-full w-full flex-col items-center">
           <motion.svg
-            style={{ rotate: rotateSvg }}
+            style={{ rotate: rotateSpring }}
             xmlns="http://www.w3.org/2000/svg"
             className={`absolute -top-4 right-0 h-16 w-16 fill-current text-gray-300 sm:h-32 sm:w-32 ${
               props.theme === "light" ? "" : "text-opacity-10"
@@ -111,7 +121,7 @@ const SecondaryHeading = ({ props }: { props: TSecondaryHeading }) => {
               damping: 15,
               mass: 1,
             }}
-            style={{ y: transformYImage, scale: scaleImage }}
+            style={{ y: transformYImage, scale: scaleSpring }}
             className=" relative inline-block h-[300px] w-full sm:mt-12 lg:h-[500px]"
           >
             <Image
