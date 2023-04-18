@@ -649,7 +649,7 @@ export default function Home() {
   return (
     <>
       <motion.div className="relative overflow-x-hidden">
-        <FirstLoadingScreen />
+        
         <Alert props={alertProps} />
         <Navbar props={NavbarProps} />
         <Header props={headerProps} />

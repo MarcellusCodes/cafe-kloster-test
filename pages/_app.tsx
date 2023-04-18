@@ -10,9 +10,9 @@ import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import "swiper/css/grid";
 import "leaflet/dist/leaflet.css";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { LoadingScreen } from "@/components/index";
+import { FirstLoadingScreen, LoadingScreen } from "@/components/index";
 
 const helveticaNeue = localFont({
   src: "../styles/Helvetica-Neue.otf",
@@ -72,7 +72,7 @@ export default function MyApp({
           >
             <LoadingScreen />
           </motion.div>
-        )}{" "}
+        )}
         <motion.div>
           <RWBProvider>
             <div
@@ -82,6 +82,7 @@ export default function MyApp({
                 helveticaNeueBold.variable,
               )}
             >
+              <FirstLoadingScreen />
               <Component {...pageProps} />
             </div>
           </RWBProvider>

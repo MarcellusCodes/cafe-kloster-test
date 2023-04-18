@@ -57,8 +57,6 @@ const SecondaryHeading = ({ props }: { props: TSecondaryHeading }) => {
   const scaleSpring = useSpring(scaleImage, springConfig);
   const transformSpring = useSpring(transformYImage, springConfig);
 
-  const [loading, setLoading] = useState(true);
-
   return (
     <div ref={containerRef} className="relative overflow-hidden">
       <Section
@@ -133,10 +131,7 @@ const SecondaryHeading = ({ props }: { props: TSecondaryHeading }) => {
               priority={true}
               quality={50}
               loading="eager"
-              className={`rounded-sm object-cover ${loading && "blur-md"}`}
-              onLoadingComplete={() => {
-                setLoading(false);
-              }}
+              className="rounded-sm object-cover"
             />
           </motion.div>
         </Container>

@@ -23,7 +23,7 @@ import {
   FirstLoadingScreen,
 } from "@/components/index";
 import { useSignInModal } from "../components/layout/sign-in-modal";
-import { useState, Suspense } from "react";
+import { useState, Suspense, useLayoutEffect } from "react";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 
@@ -539,10 +539,11 @@ const SecondaryHeadingProps = {
 
 export default function Home() {
   const { SignInModal, setShowSignInModal } = useSignInModal();
+  
   return (
     <>
       <motion.div className="relative overflow-x-hidden">
-        <FirstLoadingScreen />
+        {/* <FirstLoadingScreen /> */}
         {/* <TertiaryHeading /> */}
         <Alert props={alertProps} />
         <Navbar props={NavbarProps} />
