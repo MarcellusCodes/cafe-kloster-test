@@ -166,7 +166,22 @@ const MasonryReview = ({ props }) => {
           >
             <Masonry gutter="24px">
               {reviews.map((review) => (
-                <article
+                <motion.article
+                  initial={{
+                    y: -25,
+                    clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
+                  }}
+                  whileInView={{
+                    y: 0,
+                    clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+                  }}
+                  transition={{
+                    stiffness: 60,
+                    damping: 15,
+                    mass: 1,
+                    type: "spring",
+                  }}
+                  viewport={{ once: true, margin: "0px 0px -300px 0px" }}
                   key={review.id}
                   className="mr-4 grid w-full grid-cols-1 gap-2 rounded-sm border-2 border-gray-300 border-opacity-10 bg-gray-100 bg-opacity-[0.02] p-6  hover:border-tertiary-300 active:border-tertiary-300"
                 >
@@ -202,7 +217,7 @@ const MasonryReview = ({ props }) => {
                   <p className="col-span-2 max-w-xs font-text text-lg text-gray-300 sm:max-w-lg sm:text-xl">
                     {review.text}
                   </p>
-                </article>
+                </motion.article>
               ))}
             </Masonry>
           </ResponsiveMasonry>

@@ -27,6 +27,7 @@ import {
   CallToActionColored,
   ScrollingGallery,
   MarqueeReviewTwo,
+  FirstLoadingScreen,
 } from "@/components/index";
 import { useSignInModal } from "../components/layout/sign-in-modal";
 import { useState, Suspense } from "react";
@@ -648,7 +649,7 @@ export default function Home() {
   return (
     <>
       <motion.div className="relative overflow-x-hidden">
-        <LoadingScreen />
+        <FirstLoadingScreen />
         <Alert props={alertProps} />
         <Navbar props={NavbarProps} />
         <Header props={headerProps} />

@@ -73,10 +73,7 @@ export default function MyApp({
             <LoadingScreen />
           </motion.div>
         )}{" "}
-        <motion.div
-          key="view"
-          transition={{ type: "spring", stiffness: 60, damping: 15, mass: 1 }}
-        >
+        <motion.div>
           <RWBProvider>
             <div
               className={cx(

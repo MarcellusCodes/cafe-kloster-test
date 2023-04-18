@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Lottie from "lottie-react";
-import coffeeAnimation from "./coffeeAnimation4.json";
+import coffeeAnimation from "./coffee.json";
 import cf1 from "./cf1.json";
 import cf2 from "./cf2.json";
 
