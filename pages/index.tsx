@@ -539,7 +539,7 @@ const SecondaryHeadingProps = {
 
 export default function Home() {
   const { SignInModal, setShowSignInModal } = useSignInModal();
-  
+
   return (
     <>
       <motion.div className="relative overflow-x-hidden">
@@ -551,7 +551,7 @@ export default function Home() {
         <CtaGallery props={CtaGalleryProps} />
         <MarqueeText props={marqueeTextProps} />
         <ContentFour />
-        <MasonryGallery props={MasonryGalleryProps} />
+        {/* <MasonryGallery props={MasonryGalleryProps} /> */}
         <MarqueeReview props={marqueeReviewProps} />
         {/* <Tab props={TabProps} /> */}
         {/* <SecondaryHeading props={SecondaryHeadingProps} /> */}
