@@ -34,3 +34,4 @@ export { default as CallToActionColored } from "./call-to-action-colored";
 export { default as ScrollingGallery } from "./scrolling-gallery";
 export { default as MarqueeReviewTwo } from "./marquee-review-two";
 export { default as MapboxMap } from "./mapbox-map";
+export { default as LottieCoffeeAnimation } from "./lottie-coffee-animation";

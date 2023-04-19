@@ -64,7 +64,7 @@ const SecondaryHeading = ({ props }: { props: TSecondaryHeading }) => {
           props.theme === "light" ? "bg-primary-50" : "bg-primary-900"
         }`}
       >
-        <Container className="scrollbar-hide relative flex h-full w-full flex-col items-center">
+        <Container className="scrollbar-hide relative flex w-full flex-col items-center">
           <motion.svg
             style={{ rotate: rotateSpring }}
             xmlns="http://www.w3.org/2000/svg"
@@ -122,7 +122,7 @@ const SecondaryHeading = ({ props }: { props: TSecondaryHeading }) => {
               mass: 1,
             }}
             style={{ y: transformYImage, scale: scaleSpring }}
-            className=" relative inline-block h-[300px] w-full sm:mt-12 lg:h-[500px]"
+            className=" relative mt-6 inline-block h-[300px] w-full sm:mt-12 lg:h-[500px]"
           >
             <Image
               alt={props.image.alt}

@@ -1,13 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 
 const CookieBanner = () => {
-  const [showBanner, setShowBanner] = useState(true);
+  const [showBanner, setShowBanner] = useState(false);
 
   const handleBanner = () => {
+    localStorage.setItem("cookie", "true");
     setShowBanner(false);
   };
+
+  useEffect(() => {
+    const cookie = localStorage.getItem("cookie");
+    if (cookie !== "true") {
+      setShowBanner(true);
+    }
+  }, []);
+
   return (
     <AnimatePresence initial={false}>
       {showBanner && (
