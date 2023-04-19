@@ -14,7 +14,7 @@ const MapboxMap = () => {
         zoom: 18,
       }}
       style={{ width: "100%", height: "100%" }}
-      mapStyle="mapbox://styles/mapbox/streets-v9"
+      mapStyle="mapbox://styles/mapbox/streets-v9?optimize=true"
       mapboxAccessToken="pk.eyJ1IjoibS1wb2hsIiwiYSI6ImNsZ204MmtueTAyOWQzbnM5MDV4bHYxcWUifQ.Jt-DFTpx4RcTdbp5ZIU81Q"
     >
       <Marker
