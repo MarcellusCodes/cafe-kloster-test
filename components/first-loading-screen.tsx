@@ -3,7 +3,6 @@ import dynamic from "next/dynamic";
 
 const CoffeeAnimation = dynamic(() => import("./lottie-coffee-animation"), {
   loading: () => <span></span>,
-  ssr: false,
 });
 
 const FirstLoadingScreen = () => {
