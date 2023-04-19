@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Section } from "@/components/index";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useInView } from "framer-motion";
 import dynamic from "next/dynamic";
 
 const DynamicMapbox = dynamic(() => import("./mapbox-map"), {
@@ -13,12 +13,14 @@ const LeafletMap = () => {
   const handleShowPopup = () => {
     setShowPopup(!showPopup);
   };
+  const ref = useRef(null);
+  const isInView = useInView(ref);
 
   return (
     <>
       <Section className="relative h-[500px] w-full overflow-y-hidden">
-        <div className="absolute top-0 left-0 h-full w-full">
-          <DynamicMapbox />
+        <div ref={ref} className="absolute top-0 left-0 h-full w-full">
+          {isInView && <DynamicMapbox />}
         </div>
         <motion.div className=" absolute top-[10px] right-3 z-20 flex w-[225px] flex-col items-start rounded-sm border-2 border-gray-300 bg-white p-2 px-4 lg:left-16">
           <div className="flex w-full flex-row items-center justify-between">
