@@ -14,7 +14,7 @@ const LeafletMap = () => {
     setShowPopup(!showPopup);
   };
   const ref = useRef(null);
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { once: true, margin: "0px 0px 400px 0px" });
 
   return (
     <>
