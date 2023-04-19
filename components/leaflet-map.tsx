@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Section } from "@/components/index";
-import Map, {
+/* import Map, {
   Marker,
   NavigationControl,
   FullscreenControl,
-} from "react-map-gl";
+} from "react-map-gl"; */
 import { AnimatePresence, motion } from "framer-motion";
 
 const LeafletMap = () => {
@@ -16,7 +16,7 @@ const LeafletMap = () => {
     <>
       <Section className="relative h-[500px] w-full overflow-y-hidden">
         <div className="absolute top-0 left-0 h-full w-full">
-          <Map
+          {/* <Map
             initialViewState={{
               longitude: 12.133373995737152,
               latitude: 54.0873696208192,
@@ -41,7 +41,7 @@ const LeafletMap = () => {
             </Marker>
             <FullscreenControl position="top-left" />
             <NavigationControl position="top-left" />
-          </Map>
+          </Map> */}
         </div>
 
         <motion.div className=" absolute top-[10px] right-3 z-20 flex w-[225px] flex-col items-start rounded-sm border-2 border-gray-300 bg-white p-2 px-4 lg:left-16">
