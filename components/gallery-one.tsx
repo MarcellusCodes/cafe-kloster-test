@@ -86,7 +86,7 @@ const GalleryImage = ({ index }: { index: number }) => {
         } ${index % 3 === 2 && "bottom-4"} left-4`}
       >
         <span className="font-heading text-lg text-tertiary-300">
-          23. Oktober 2022
+          Lorem, ipsum.
         </span>
         <h3 className="font-heading text-3xl text-white">
           Lorem ipsum dolor sit

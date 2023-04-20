@@ -1,3 +1,4 @@
+
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { Analytics } from "@vercel/analytics/react";
@@ -8,7 +9,6 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import "swiper/css/grid";
-import "leaflet/dist/leaflet.css";
 import { FirstLoadingScreen } from "@/components/index";
 
 const helveticaNeue = localFont({
@@ -30,6 +30,9 @@ export default function MyApp({
   Component,
   pageProps: { ...pageProps },
 }: AppProps) {
+  
+
+  
   return (
     <>
       <div>

@@ -1,17 +1,13 @@
 /** @type {import('tailwindcss').Config} */
-const plugin = require("tailwindcss/plugin");
+
 const defautTheme = require("tailwindcss/defaultTheme");
 const { blackA, mauve, violet } = require("@radix-ui/colors");
 
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
-    "./src/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
-  future: {
-    hoverOnlyWhenSupported: true,
-  },
   theme: {
     screens: {
       xs: "540px",
@@ -85,13 +81,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require("@tailwindcss/forms"),
-    require("@tailwindcss/typography"),
-    require("@tailwindcss/line-clamp"),
-    plugin(({ addVariant }) => {
-      addVariant("radix-side-top", '&[data-side="top"]');
-      addVariant("radix-side-bottom", '&[data-side="bottom"]');
-    }),
-  ],
+  
 };

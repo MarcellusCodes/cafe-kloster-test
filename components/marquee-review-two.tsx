@@ -1,5 +1,5 @@
 import React, { useEffect, useLayoutEffect, useState } from "react";
-import { Container, Section } from "@/components/index";
+import { Container, PrimaryLink, Section } from "@/components/index";
 import Image from "next/image";
 import * as Tabs from "@radix-ui/react-tabs";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
@@ -221,6 +221,9 @@ const MasonryReview = ({ props }) => {
               ))}
             </Masonry>
           </ResponsiveMasonry>
+        </div>
+        <div className="mt-6 grid place-items-center">
+          <PrimaryLink title="Mehr Bewertungen" href="/" />
         </div>
       </Container>
     </Section>
